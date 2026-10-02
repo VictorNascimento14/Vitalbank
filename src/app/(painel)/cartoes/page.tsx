@@ -1,4 +1,5 @@
 import { listarCartoes, listarTransacoes } from "@/dados";
+import { AdicionarCartao } from "@/telas/cartoes/AdicionarCartao";
 import { GastoPorCartao } from "@/telas/cartoes/GastoPorCartao";
 import { ListaDeCartoes } from "@/telas/cartoes/ListaDeCartoes";
 import { MeusCartoes } from "@/telas/comum/MeusCartoes";
@@ -12,6 +13,9 @@ export default async function CartoesDeCredito() {
       </div>
       <GastoPorCartao cartoes={cartoes} transacoes={transacoes} />
       <ListaDeCartoes cartoes={cartoes} />
+      <div className="xl:col-span-2">
+        <AdicionarCartao />
+      </div>
     </div>
   );
 }
