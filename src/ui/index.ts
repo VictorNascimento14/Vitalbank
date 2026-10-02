@@ -5,6 +5,7 @@ export { BarraDeProgresso } from "./base/BarraDeProgresso";
 export { Bloco } from "./base/Bloco";
 export { Botao } from "./base/Botao";
 export { Campo } from "./base/Campo";
+export { Esqueleto } from "./base/Esqueleto";
 export { CampoDeSelecao } from "./base/CampoDeSelecao";
 export { CartaoDeResumo } from "./base/CartaoDeResumo";
 export { Paginacao } from "./base/Paginacao";
