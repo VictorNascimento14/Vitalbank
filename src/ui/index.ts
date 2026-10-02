@@ -1,6 +1,7 @@
 export { Abas, type Aba } from "./base/Abas";
 export { Alternador } from "./base/Alternador";
 export { Avatar } from "./base/Avatar";
+export { BarraDeProgresso } from "./base/BarraDeProgresso";
 export { Bloco } from "./base/Bloco";
 export { Botao } from "./base/Botao";
 export { Campo } from "./base/Campo";
