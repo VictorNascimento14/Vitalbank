@@ -1,20 +1,12 @@
 import { RiArrowDownLine, RiArrowUpLine } from "@remixicon/react";
 import type { ReactNode } from "react";
-import type { CategoriaDeTransacao, Transacao } from "@/dados";
+import type { Transacao } from "@/dados";
 import { finalDoCartao } from "@/dominio/cartao";
 import { formatarDataCurta } from "@/dominio/datas";
 import { formatarMoeda } from "@/dominio/dinheiro";
+import { TIPO } from "@/telas/comum/categoria";
 import { cx } from "@/ui";
 import { Escalonado, ItemEscalonado } from "@/ui/movimento";
-
-export const TIPO: Record<CategoriaDeTransacao, string> = {
-  compra: "Compras",
-  transferencia: "Transferência",
-  servico: "Serviço",
-  assinatura: "Assinatura",
-  deposito: "Depósito",
-  salario: "Salário",
-};
 
 function Seta({ entrada }: { entrada: boolean }) {
   const Icone = entrada ? RiArrowDownLine : RiArrowUpLine;
