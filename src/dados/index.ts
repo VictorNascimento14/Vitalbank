@@ -4,6 +4,7 @@
  */
 import { ATIVIDADE_SEMANAL } from "./sementes/atividade";
 import { CARTOES } from "./sementes/cartoes";
+import { DESPESAS_POR_CATEGORIA } from "./sementes/despesas";
 import { TRANSACOES } from "./sementes/transacoes";
 import type { Cartao, Transacao } from "./tipos";
 
@@ -19,4 +20,8 @@ export async function listarTransacoes(opcoes: { limite?: number } = {}): Promis
 
 export async function atividadeSemanal() {
   return ATIVIDADE_SEMANAL;
+}
+
+export async function despesasPorCategoria() {
+  return DESPESAS_POR_CATEGORIA;
 }

@@ -29,6 +29,8 @@
   --alerta: #ffbb38;
   --laranja: #feaa09;
   --rosa: #ff82ac;
+  --magenta: #fa00ff;
+  --tangerina: #fc7900;
 
   --amarelo-claro: #fff5d9;
   --azul-claro: #e7edff;
@@ -67,6 +69,8 @@
   --color-alerta: var(--alerta);
   --color-laranja: var(--laranja);
   --color-rosa: var(--rosa);
+  --color-magenta: var(--magenta);
+  --color-tangerina: var(--tangerina);
 
   --color-amarelo-claro: var(--amarelo-claro);
   --color-azul-claro: var(--azul-claro);
