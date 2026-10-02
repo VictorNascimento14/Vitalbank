@@ -16,6 +16,8 @@ const TAMANHOS = {
   sm: "size-[45px] [&>svg]:size-5",
   md: "size-[55px] [&>svg]:size-6",
   lg: "size-[60px] [&>svg]:size-7 md:size-[70px] md:[&>svg]:size-8",
+  /** 45 px no celular, 60 no tablet, 70 no desktop — para cartões em duas colunas no celular. */
+  fluido: "size-[45px] [&>svg]:size-5 md:size-[60px] md:[&>svg]:size-7 xl:size-[70px] xl:[&>svg]:size-8",
 } as const;
 
 interface Props {

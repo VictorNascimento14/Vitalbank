@@ -4,6 +4,7 @@ export { Avatar } from "./base/Avatar";
 export { Bloco } from "./base/Bloco";
 export { Botao } from "./base/Botao";
 export { Campo } from "./base/Campo";
+export { CartaoDeResumo } from "./base/CartaoDeResumo";
 export { Paginacao } from "./base/Paginacao";
 export { PastilhaDeIcone, type Tom } from "./base/PastilhaDeIcone";
 export { TituloDeSecao } from "./base/TituloDeSecao";
