@@ -1,9 +1,12 @@
+import { metadadosDaTela } from "@/ui/casca/navegacao";
 import { acoesEmAlta, investimentoAnual, listarCarteira, receitaMensal, resumoDosInvestimentos } from "@/dados";
 import { AcoesEmAlta } from "@/telas/investimentos/AcoesEmAlta";
 import { MeusInvestimentos } from "@/telas/investimentos/MeusInvestimentos";
 import { InvestimentoAnual } from "@/telas/investimentos/InvestimentoAnual";
 import { ReceitaMensal } from "@/telas/investimentos/ReceitaMensal";
 import { ResumoDosInvestimentos } from "@/telas/investimentos/ResumoDosInvestimentos";
+
+export const metadata = metadadosDaTela("/investimentos");
 
 export default async function Investimentos() {
   const [resumo, anos, meses, carteira, acoes] = await Promise.all([

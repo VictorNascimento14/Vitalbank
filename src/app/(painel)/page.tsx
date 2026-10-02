@@ -1,3 +1,4 @@
+import { metadadosDaTela } from "@/ui/casca/navegacao";
 import {
   atividadeSemanal,
   despesasPorCategoria,
@@ -12,6 +13,8 @@ import { HistoricoDeSaldo } from "@/telas/visao-geral/HistoricoDeSaldo";
 import { AcaoDosCartoes, MeusCartoes } from "@/telas/comum/MeusCartoes";
 import { TransferenciaRapida } from "@/telas/visao-geral/TransferenciaRapida";
 import { TransacoesRecentes } from "@/telas/visao-geral/TransacoesRecentes";
+
+export const metadata = metadadosDaTela("/");
 
 export default async function VisaoGeral() {
   const [cartoes, recentes, semana, despesas, contatos, saldo] = await Promise.all([

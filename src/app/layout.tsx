@@ -13,7 +13,7 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  title: "Vitalbank",
+  title: { default: "Vitalbank", template: "%s · Vitalbank" },
   description: "Painel de banco digital — cartões, transações, contas e investimentos.",
 };
 
