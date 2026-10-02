@@ -34,7 +34,7 @@ export function FaturasEnviadas({ faturas, hoje }: { faturas: Dados; hoje?: Date
                   <p className="truncate text-rotulo font-medium text-tinta-forte md:text-corpo">{f.para}</p>
                   <p className="text-legenda text-tinta-suave md:text-rotulo">{haQuantoTempo(f.enviadaEm, hoje)}</p>
                 </div>
-                <p className="text-rotulo font-medium tabular-nums text-tinta-suave md:text-corpo">
+                <p className="valor-sensivel text-rotulo font-medium tabular-nums text-tinta-suave md:text-corpo">
                   {formatarMoeda(f.valor)}
                 </p>
               </ItemEscalonado>

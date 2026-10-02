@@ -110,7 +110,7 @@ export function CartaoDeCredito({ cartao, className }: { cartao: Cartao; classNa
           <div className="flex items-start justify-between">
             <div>
               <p className={cx("text-[11px] md:text-legenda", face.rotulo)}>Saldo</p>
-              <p className="text-corpo font-semibold md:text-destaque">{saldo}</p>
+              <p className="valor-sensivel text-corpo font-semibold md:text-destaque">{saldo}</p>
             </div>
             <Chip className={cx("size-[29px] md:size-[35px]", face.chip)} />
           </div>

@@ -59,14 +59,14 @@ export function EmprestimosAtivos({ emprestimos }: { emprestimos: Dados }) {
             {emprestimos.map((e, i) => (
               <ItemEscalonado key={e.id} como="tr" className="border-b border-borda text-tinta-forte last:border-0">
                 <td className={cx(celula, "hidden tabular-nums md:table-cell")}>{String(i + 1).padStart(2, "0")}.</td>
-                <td className={cx(celula, "tabular-nums")}>{formatarMoeda(e.valor)}</td>
+                <td className={cx(celula, "valor-sensivel tabular-nums")}>{formatarMoeda(e.valor)}</td>
                 <td className={cx(celula, "tabular-nums")}>
                   <motion.span
                     key={falta[e.id]}
                     initial={{ backgroundColor: "var(--turquesa-clara)" }}
                     animate={{ backgroundColor: "rgb(0 0 0 / 0)" }}
                     transition={{ duration: 1.2 }}
-                    className="-mx-1.5 rounded-miudo px-1.5 py-0.5"
+                    className="valor-sensivel -mx-1.5 rounded-miudo px-1.5 py-0.5"
                   >
                     {formatarMoeda(falta[e.id])}
                   </motion.span>
@@ -105,11 +105,11 @@ export function EmprestimosAtivos({ emprestimos }: { emprestimos: Dados }) {
           <tfoot>
             <tr className="font-medium text-perigo">
               <th scope="row" className={cx(celula, "hidden pb-0 font-medium md:table-cell")}>Total</th>
-              <td className={cx(celula, "pb-0 tabular-nums")}>
+              <td className={cx(celula, "valor-sensivel pb-0 tabular-nums")}>
                 <span className="md:hidden">Total: </span>
                 {formatarMoeda(totais.valor)}
               </td>
-              <td className={cx(celula, "pb-0 tabular-nums")} aria-live="polite">
+              <td className={cx(celula, "valor-sensivel pb-0 tabular-nums")} aria-live="polite">
                 {formatarMoeda(totais.falta)}
               </td>
               <td className={cx(celula, "hidden pb-0 md:table-cell")} />

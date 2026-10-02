@@ -85,7 +85,7 @@ export function GraficoDeLinha({
               stroke={gradeTracejada ? "var(--borda-campo)" : "var(--borda)"}
               strokeDasharray={gradeTracejada ? "4 5" : undefined}
             />
-            <text x={M.esq - 12} y={y(m)} dy="0.35em" textAnchor="end" className="fill-tinta-suave text-[13px]">
+            <text x={M.esq - 12} y={y(m)} dy="0.35em" textAnchor="end" className="valor-sensivel fill-tinta-suave text-[13px]">
               {eixo(m)}
             </text>
           </g>

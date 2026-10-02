@@ -74,7 +74,7 @@ export function ListaDeCartoes({ cartoes }: { cartoes: readonly Cartao[] }) {
                         ].map(([rotulo, valor]) => (
                           <div key={rotulo}>
                             <dt className="text-legenda text-tinta-suave">{rotulo}</dt>
-                            <dd className={cx("text-rotulo font-medium", rotulo === "Situação" ? "text-sucesso" : "text-tinta-forte")}>
+                            <dd className={cx("text-rotulo font-medium", rotulo === "Situação" ? "text-sucesso" : "text-tinta-forte", rotulo === "Saldo" && "valor-sensivel")}>
                               {valor}
                             </dd>
                           </div>

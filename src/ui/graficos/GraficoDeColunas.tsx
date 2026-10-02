@@ -82,7 +82,7 @@ export function GraficoDeColunas({ titulo, rotulos, valores, destaque, formato =
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
             transition={mola}
-            className="fill-tinta text-[12px] font-semibold"
+            className="valor-sensivel fill-tinta text-[12px] font-semibold"
           >
             {formatarNumero(valores[ativa], formato)}
           </motion.text>

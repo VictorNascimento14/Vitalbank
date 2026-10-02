@@ -26,7 +26,7 @@ function Seta({ entrada }: { entrada: boolean }) {
 
 function Valor({ centavos }: { centavos: number }) {
   return (
-    <span className={cx("font-medium tabular-nums", centavos > 0 ? "text-sucesso" : "text-perigo")}>
+    <span className={cx("valor-sensivel font-medium tabular-nums", centavos > 0 ? "text-sucesso" : "text-perigo")}>
       {formatarMoeda(centavos, { sinal: true })}
     </span>
   );

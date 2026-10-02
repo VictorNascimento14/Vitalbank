@@ -57,7 +57,7 @@ export function GraficoDeBarras({ titulo, categorias, series, formato = "inteiro
         {marcas.map((m) => (
           <g key={m}>
             <line x1={M.esq} x2={L - M.dir} y1={y(m)} y2={y(m)} stroke="var(--borda)" />
-            <text x={M.esq - 12} y={y(m)} dy="0.35em" textAnchor="end" className="fill-tinta-suave text-[13px]">
+            <text x={M.esq - 12} y={y(m)} dy="0.35em" textAnchor="end" className="valor-sensivel fill-tinta-suave text-[13px]">
               {rotulo(m)}
             </text>
           </g>
