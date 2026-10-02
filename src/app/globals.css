@@ -102,6 +102,14 @@
   --spacing-cabecalho: 101px;
 }
 
+@keyframes sacudir {
+  0%, 100% { transform: rotate(0); }
+  20% { transform: rotate(-14deg); }
+  40% { transform: rotate(12deg); }
+  60% { transform: rotate(-8deg); }
+  80% { transform: rotate(4deg); }
+}
+
 body {
   background: var(--fundo);
   color: var(--tinta-forte);
