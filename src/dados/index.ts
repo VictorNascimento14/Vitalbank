@@ -10,7 +10,12 @@ import { DEBITO_E_CREDITO } from "./sementes/debitoCredito";
 import { DESPESAS_POR_CATEGORIA } from "./sementes/despesas";
 import { DESPESAS_MENSAIS } from "./sementes/despesasMensais";
 import { FATURAS_ENVIADAS } from "./sementes/faturas";
-import { INVESTIMENTO_ANUAL, RECEITA_MENSAL, RESUMO_DOS_INVESTIMENTOS } from "./sementes/investimentos";
+import {
+  CARTEIRA,
+  INVESTIMENTO_ANUAL,
+  RECEITA_MENSAL,
+  RESUMO_DOS_INVESTIMENTOS,
+} from "./sementes/investimentos";
 import { HISTORICO_DE_SALDO } from "./sementes/saldo";
 import { TRANSACOES } from "./sementes/transacoes";
 import type { Cartao, Contato, Transacao } from "./tipos";
@@ -76,4 +81,9 @@ export async function investimentoAnual() {
 /** Receita dos investimentos por mês, doze meses. */
 export async function receitaMensal() {
   return RECEITA_MENSAL;
+}
+
+/** Aplicações da carteira. */
+export async function listarCarteira() {
+  return CARTEIRA;
 }
