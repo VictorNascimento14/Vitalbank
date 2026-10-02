@@ -37,3 +37,12 @@ export const CARTEIRA: readonly { id: string; nome: string; setor: string; valor
   { id: "a2", nome: "Galáxia Mobile", setor: "E-commerce, marketplace", valor: 2530000, retorno: -400 },
   { id: "a3", nome: "Volt Motores", setor: "Veículos elétricos", valor: 820000, retorno: 2500 },
 ];
+
+/** Ações em alta no dia. Nomes fictícios; preço em centavos, variação em pontos-base. */
+export const ACOES_EM_ALTA: readonly { id: string; nome: string; preco: number; variacao: number }[] = [
+  { id: "s1", nome: "Trívia", preco: 52000, variacao: 500 },
+  { id: "s2", nome: "Lente", preco: 48000, variacao: 1000 },
+  { id: "s3", nome: "Rota Food", preco: 35000, variacao: -300 },
+  { id: "s4", nome: "Nórdica", preco: 94000, variacao: 200 },
+  { id: "s5", nome: "Ritmo", preco: 67000, variacao: -1200 },
+];
