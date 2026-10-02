@@ -69,6 +69,7 @@
   --color-rosa-claro: var(--rosa-claro);
 
   --shadow-cartao: 4px 4px 18px -2px var(--sombra-cor);
+  --shadow-bolinha: 0 2px 6px rgb(0 0 0 / 0.15);
 }
 
 @theme {

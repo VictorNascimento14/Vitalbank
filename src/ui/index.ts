@@ -1,3 +1,4 @@
+export { Alternador } from "./base/Alternador";
 export { Avatar } from "./base/Avatar";
 export { Bloco } from "./base/Bloco";
 export { Botao } from "./base/Botao";
