@@ -1,5 +1,6 @@
 import { listarCartoes, listarTransacoes } from "@/dados";
 import { GastoPorCartao } from "@/telas/cartoes/GastoPorCartao";
+import { ListaDeCartoes } from "@/telas/cartoes/ListaDeCartoes";
 import { MeusCartoes } from "@/telas/comum/MeusCartoes";
 
 export default async function CartoesDeCredito() {
@@ -10,6 +11,7 @@ export default async function CartoesDeCredito() {
         <MeusCartoes cartoes={cartoes} quantos={3} />
       </div>
       <GastoPorCartao cartoes={cartoes} transacoes={transacoes} />
+      <ListaDeCartoes cartoes={cartoes} />
     </div>
   );
 }
