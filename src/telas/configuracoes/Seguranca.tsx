@@ -73,18 +73,35 @@ export function Seguranca() {
     <form onSubmit={salvar} noValidate className="flex flex-col gap-7">
       <fieldset className="flex flex-col gap-4">
         <legend className="mb-4 text-corpo font-medium text-tinta">Verificação em duas etapas</legend>
-        <Alternador
-          rotulo="Pedir um código além da senha ao entrar"
-          ligado={duasEtapas}
-          aoMudar={setDuasEtapas}
-        />
+        <Alternador rotulo="Pedir um código além da senha ao entrar" ligado={duasEtapas} aoMudar={setDuasEtapas} />
       </fieldset>
       <fieldset className="flex max-w-md flex-col gap-5">
         <legend className="mb-4 text-corpo font-medium text-tinta">Trocar a senha</legend>
-        <Campo rotulo="Senha atual" type="password" autoComplete="current-password" value={atual} erro={erros.atual} onChange={(e) => setAtual(e.target.value)} />
-        <Campo rotulo="Nova senha" type="password" autoComplete="new-password" value={nova} erro={erros.nova} onChange={(e) => setNova(e.target.value)} />
+        <Campo
+          rotulo="Senha atual"
+          type="password"
+          autoComplete="current-password"
+          value={atual}
+          erro={erros.atual}
+          onChange={(e) => setAtual(e.target.value)}
+        />
+        <Campo
+          rotulo="Nova senha"
+          type="password"
+          autoComplete="new-password"
+          value={nova}
+          erro={erros.nova}
+          onChange={(e) => setNova(e.target.value)}
+        />
         <Medidor senha={nova} />
-        <Campo rotulo="Confirme a nova senha" type="password" autoComplete="new-password" value={confirma} erro={erros.confirma} onChange={(e) => setConfirma(e.target.value)} />
+        <Campo
+          rotulo="Confirme a nova senha"
+          type="password"
+          autoComplete="new-password"
+          value={confirma}
+          erro={erros.confirma}
+          onChange={(e) => setConfirma(e.target.value)}
+        />
       </fieldset>
       <div className="flex flex-wrap items-center justify-end gap-4">
         <AnimatePresence>

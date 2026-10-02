@@ -46,7 +46,7 @@ export function ListaDeCartoes({ cartoes }: { cartoes: readonly Cartao[] }) {
                     aria-expanded={expandido}
                     aria-controls={painel}
                     onClick={() => setAberto(expandido ? null : c.id)}
-                    className="flex items-center justify-self-end gap-1 rounded-miudo px-2 py-1 text-legenda font-medium text-primaria-viva transition-colors hover:bg-azul-claro focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primaria-viva md:text-rotulo"
+                    className="flex items-center gap-1 justify-self-end rounded-miudo px-2 py-1 text-legenda font-medium text-primaria-viva transition-colors hover:bg-azul-claro focus-visible:ring-2 focus-visible:ring-primaria-viva focus-visible:outline-none md:text-rotulo"
                   >
                     {expandido ? "Fechar" : "Ver detalhes"}
                     <motion.span animate={{ rotate: expandido ? 180 : 0 }} transition={{ duration: duracao.media }}>
@@ -74,7 +74,13 @@ export function ListaDeCartoes({ cartoes }: { cartoes: readonly Cartao[] }) {
                         ].map(([rotulo, valor]) => (
                           <div key={rotulo}>
                             <dt className="text-legenda text-tinta-suave">{rotulo}</dt>
-                            <dd className={cx("text-rotulo font-medium", rotulo === "Situação" ? "text-sucesso" : "text-tinta-forte", rotulo === "Saldo" && "valor-sensivel")}>
+                            <dd
+                              className={cx(
+                                "text-rotulo font-medium",
+                                rotulo === "Situação" ? "text-sucesso" : "text-tinta-forte",
+                                rotulo === "Saldo" && "valor-sensivel",
+                              )}
+                            >
                               {valor}
                             </dd>
                           </div>

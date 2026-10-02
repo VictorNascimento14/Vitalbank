@@ -41,7 +41,12 @@ describe("acessibilidade das telas (axe)", () => {
 });
 
 test("controle: o axe reprova uma falha conhecida", async () => {
-  // eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text -- falha de propósito
-  const falhas = await violacoes(<><img src="x.png" /><button /></>);
+  const falhas = await violacoes(
+    <>
+      {/* eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text -- falha de propósito */}
+      <img src="x.png" />
+      <button />
+    </>,
+  );
   expect(falhas.map((f) => f.split(":")[0]).sort()).toEqual(["button-name", "image-alt"]);
 });

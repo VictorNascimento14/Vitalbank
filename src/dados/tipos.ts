@@ -19,13 +19,7 @@ export interface Cartao {
   tipo: "principal" | "adicional";
 }
 
-export type CategoriaDeTransacao =
-  | "deposito"
-  | "transferencia"
-  | "compra"
-  | "servico"
-  | "assinatura"
-  | "salario";
+export type CategoriaDeTransacao = "deposito" | "transferencia" | "compra" | "servico" | "assinatura" | "salario";
 
 export interface Transacao {
   id: string;

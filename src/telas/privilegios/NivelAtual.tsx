@@ -18,7 +18,7 @@ export function NivelAtual({ programa }: { programa: Dados }) {
       >
         <RiVipCrown2Fill
           aria-hidden="true"
-          className="absolute -right-6 -top-6 size-44 rotate-12 text-white/10 motion-safe:animate-[flutuar_6s_ease-in-out_infinite]"
+          className="absolute -top-6 -right-6 size-44 rotate-12 text-white/10 motion-safe:animate-[flutuar_6s_ease-in-out_infinite]"
         />
         <p className="text-rotulo text-white/70">Seu nível</p>
         <p className="mt-1 text-titulo font-semibold">{atual.nome}</p>

@@ -4,7 +4,10 @@ import { expect, test } from "vitest";
 import { listarTransacoes } from "@/dados";
 import { Extrato } from "./Extrato";
 
-const linhas = () => within(screen.getByRole("table", { name: "Transações" })).getAllByRole("row").slice(1);
+const linhas = () =>
+  within(screen.getByRole("table", { name: "Transações" }))
+    .getAllByRole("row")
+    .slice(1);
 
 test("cinco por página, quatro páginas para vinte transações", async () => {
   render(<Extrato transacoes={await listarTransacoes()} />);

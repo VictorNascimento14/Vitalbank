@@ -3,7 +3,11 @@ import { Bloco, Esqueleto } from "@/ui";
 /** Enquanto a tela carrega: a forma de uma tela comum, com o brilho correndo. */
 export default function Carregando() {
   return (
-    <div role="status" aria-live="polite" className="grid grid-cols-1 gap-6 lg:gap-[30px] xl:grid-cols-[minmax(0,73fr)_minmax(0,35fr)]">
+    <div
+      role="status"
+      aria-live="polite"
+      className="grid grid-cols-1 gap-6 lg:gap-[30px] xl:grid-cols-[minmax(0,73fr)_minmax(0,35fr)]"
+    >
       <span className="sr-only">Carregando…</span>
       <div className="flex flex-col gap-4">
         <Esqueleto className="h-7 w-40" />

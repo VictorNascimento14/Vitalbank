@@ -1,13 +1,6 @@
 "use client";
 
-import {
-  motion,
-  useMotionTemplate,
-  useMotionValue,
-  useReducedMotion,
-  useSpring,
-  useTransform,
-} from "motion/react";
+import { motion, useMotionTemplate, useMotionValue, useReducedMotion, useSpring, useTransform } from "motion/react";
 import type { PointerEvent } from "react";
 import type { Cartao } from "@/dados";
 import { mascararCartao } from "@/dominio/cartao";
@@ -116,11 +109,11 @@ export function CartaoDeCredito({ cartao, className }: { cartao: Cartao; classNa
           </div>
           <dl className="flex gap-12 md:gap-16">
             <div>
-              <dt className={cx("text-[10px] uppercase tracking-wide md:text-[12px]", face.rotulo)}>Titular</dt>
+              <dt className={cx("text-[10px] tracking-wide uppercase md:text-[12px]", face.rotulo)}>Titular</dt>
               <dd className="text-legenda font-semibold md:text-rotulo">{cartao.titular}</dd>
             </div>
             <div>
-              <dt className={cx("text-[10px] uppercase tracking-wide md:text-[12px]", face.rotulo)}>Validade</dt>
+              <dt className={cx("text-[10px] tracking-wide uppercase md:text-[12px]", face.rotulo)}>Validade</dt>
               <dd className="text-legenda font-semibold md:text-rotulo">{cartao.validade}</dd>
             </div>
           </dl>

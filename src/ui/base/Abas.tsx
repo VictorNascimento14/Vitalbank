@@ -70,7 +70,7 @@ export function Abas({ abas, ativa, aoMudar, className, rotulo }: Props) {
               onKeyDown={(e) => teclado(e, i)}
               className={cx(
                 "relative -mb-px px-1 pb-3 text-rotulo font-medium transition-colors duration-200 md:px-4 md:text-corpo",
-                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primaria-viva focus-visible:ring-offset-2",
+                "focus-visible:ring-2 focus-visible:ring-primaria-viva focus-visible:ring-offset-2 focus-visible:outline-none",
                 selecionada ? "text-primaria" : "text-tinta-suave hover:text-tinta",
               )}
             >

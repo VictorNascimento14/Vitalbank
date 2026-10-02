@@ -48,7 +48,7 @@ export function Avatar({ nome, tamanho = "md", className }: Props) {
       role="img"
       aria-label={nome}
       className={cx(
-        "inline-flex shrink-0 select-none items-center justify-center rounded-full font-semibold text-white",
+        "inline-flex shrink-0 items-center justify-center rounded-full font-semibold text-white select-none",
         TAMANHOS[tamanho],
         className,
       )}

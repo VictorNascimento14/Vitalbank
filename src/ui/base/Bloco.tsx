@@ -8,14 +8,5 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 
 /** A superfície branca de canto 25 px que segura quase todo conteúdo do app. */
 export function Bloco({ colado, className, ...resto }: Props) {
-  return (
-    <div
-      className={cx(
-        "rounded-cartao bg-superficie",
-        !colado && "p-5 md:p-6",
-        className,
-      )}
-      {...resto}
-    />
-  );
+  return <div className={cx("rounded-cartao bg-superficie", !colado && "p-5 md:p-6", className)} {...resto} />;
 }

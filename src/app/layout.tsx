@@ -26,7 +26,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <head>
         <script dangerouslySetInnerHTML={{ __html: SCRIPT_DO_TEMA + SCRIPT_DE_OCULTAR }} />
       </head>
-      <body className="min-h-full flex flex-col">
+      <body className="flex min-h-full flex-col">
         <ProvedorDeMovimento>{children}</ProvedorDeMovimento>
       </body>
     </html>

@@ -24,9 +24,9 @@ export function CampoDeSelecao({ rotulo, opcoes, className, ...resto }: Props) {
         <select
           id={id}
           className={cx(
-            "h-12 w-full appearance-none rounded-campo border border-borda-campo bg-superficie pl-5 pr-12 text-rotulo text-tinta-suave",
+            "h-12 w-full appearance-none rounded-campo border border-borda-campo bg-superficie pr-12 pl-5 text-rotulo text-tinta-suave",
             "transition-[border-color,box-shadow] duration-200 ease-saida hover:border-tinta-suave/50",
-            "focus:border-primaria-viva focus:outline-none focus:ring-4 focus:ring-primaria-viva/15",
+            "focus:border-primaria-viva focus:ring-4 focus:ring-primaria-viva/15 focus:outline-none",
           )}
           {...resto}
         >
@@ -38,7 +38,7 @@ export function CampoDeSelecao({ rotulo, opcoes, className, ...resto }: Props) {
         </select>
         <RiArrowDownSLine
           aria-hidden="true"
-          className="pointer-events-none absolute right-4 top-1/2 size-5 -translate-y-1/2 text-tinta-suave transition-transform duration-300 ease-saida group-focus-within:rotate-180"
+          className="pointer-events-none absolute top-1/2 right-4 size-5 -translate-y-1/2 text-tinta-suave transition-transform duration-300 ease-saida group-focus-within:rotate-180"
         />
       </div>
     </div>

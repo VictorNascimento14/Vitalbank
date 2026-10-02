@@ -42,7 +42,11 @@ export function BaixarRecibo({ transacao }: { transacao: Transacao }) {
           exit={{ y: 8, opacity: 0 }}
           transition={{ duration: 0.15 }}
         >
-          {baixado ? <RiCheckLine aria-hidden="true" className="size-4" /> : <RiDownloadLine aria-hidden="true" className="size-4" />}
+          {baixado ? (
+            <RiCheckLine aria-hidden="true" className="size-4" />
+          ) : (
+            <RiDownloadLine aria-hidden="true" className="size-4" />
+          )}
           {baixado ? "Pronto" : "Baixar"}
         </motion.span>
       </AnimatePresence>

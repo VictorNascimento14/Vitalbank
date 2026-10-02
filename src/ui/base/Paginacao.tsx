@@ -37,12 +37,16 @@ export function Paginacao({ pagina, total, aoMudar, className }: Props) {
                 aria-label={`Página ${n}`}
                 onClick={() => aoMudar(n)}
                 className={cx(
-                  "relative grid size-10 place-items-center rounded-miudo text-rotulo font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primaria-viva",
+                  "relative grid size-10 place-items-center rounded-miudo text-rotulo font-medium transition-colors focus-visible:ring-2 focus-visible:ring-primaria-viva focus-visible:outline-none",
                   atual ? "text-white" : "text-primaria hover:bg-azul-claro",
                 )}
               >
                 {atual && (
-                  <motion.span layoutId={`${id}-atual`} transition={mola} className="absolute inset-0 rounded-miudo bg-primaria" />
+                  <motion.span
+                    layoutId={`${id}-atual`}
+                    transition={mola}
+                    className="absolute inset-0 rounded-miudo bg-primaria"
+                  />
                 )}
                 <span className="relative">{n}</span>
               </button>

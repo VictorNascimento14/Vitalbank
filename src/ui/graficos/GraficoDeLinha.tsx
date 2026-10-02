@@ -85,7 +85,13 @@ export function GraficoDeLinha({
               stroke={gradeTracejada ? "var(--borda-campo)" : "var(--borda)"}
               strokeDasharray={gradeTracejada ? "4 5" : undefined}
             />
-            <text x={M.esq - 12} y={y(m)} dy="0.35em" textAnchor="end" className="valor-sensivel fill-tinta-suave text-[13px]">
+            <text
+              x={M.esq - 12}
+              y={y(m)}
+              dy="0.35em"
+              textAnchor="end"
+              className="valor-sensivel fill-tinta-suave text-[13px]"
+            >
               {eixo(m)}
             </text>
           </g>
@@ -140,7 +146,15 @@ export function GraficoDeLinha({
           ))}
         {foco !== null && (
           <g>
-            <line x1={pts[foco].x} x2={pts[foco].x} y1={M.topo} y2={base} stroke={cssCor} strokeOpacity="0.35" strokeWidth={1.5} />
+            <line
+              x1={pts[foco].x}
+              x2={pts[foco].x}
+              y1={M.topo}
+              y2={base}
+              stroke={cssCor}
+              strokeOpacity="0.35"
+              strokeWidth={1.5}
+            />
             <circle cx={pts[foco].x} cy={pts[foco].y} r={7} fill={cssCor} stroke="var(--superficie)" strokeWidth={3} />
           </g>
         )}

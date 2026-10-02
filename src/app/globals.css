@@ -54,38 +54,38 @@
  */
 @media (prefers-color-scheme: dark) {
   :root:not([data-tema="claro"]) {
-  --primaria: #6e6bff;
-  --primaria-viva: #5b83ff;
-  --azul: #6a8dff;
+    --primaria: #6e6bff;
+    --primaria-viva: #5b83ff;
+    --azul: #6a8dff;
 
-  --tinta: #e4e7f5;
-  --tinta-forte: #f3f4fa;
-  --tinta-suave: #8d9cc4;
-  --tinta-apagada: #5d6585;
-  --marinho: #3a4275;
+    --tinta: #e4e7f5;
+    --tinta-forte: #f3f4fa;
+    --tinta-suave: #8d9cc4;
+    --tinta-apagada: #5d6585;
+    --marinho: #3a4275;
 
-  --fundo: #0e1020;
-  --superficie: #171a2e;
-  --borda: #252a44;
-  --borda-campo: #2e3452;
+    --fundo: #0e1020;
+    --superficie: #171a2e;
+    --borda: #252a44;
+    --borda-campo: #2e3452;
 
-  --sucesso: #2be0b4;
-  --turquesa: #22d3c5;
-  --perigo: #ff6b81;
-  --alerta: #ffc24d;
-  --laranja: #ffb02e;
-  --rosa: #ff8fb4;
-  --magenta: #f04dff;
-  --tangerina: #ff8a1f;
+    --sucesso: #2be0b4;
+    --turquesa: #22d3c5;
+    --perigo: #ff6b81;
+    --alerta: #ffc24d;
+    --laranja: #ffb02e;
+    --rosa: #ff8fb4;
+    --magenta: #f04dff;
+    --tangerina: #ff8a1f;
 
-  --amarelo-claro: rgb(255 187 56 / 0.14);
-  --azul-claro: rgb(106 141 255 / 0.16);
-  --turquesa-clara: rgb(34 211 197 / 0.14);
-  --rosa-claro: rgb(255 130 172 / 0.14);
+    --amarelo-claro: rgb(255 187 56 / 0.14);
+    --azul-claro: rgb(106 141 255 / 0.16);
+    --turquesa-clara: rgb(34 211 197 / 0.14);
+    --rosa-claro: rgb(255 130 172 / 0.14);
 
-  --sombra-cor: rgb(0 0 0 / 0.45);
-  --brilho-esqueleto: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.06), transparent);
-  color-scheme: dark;
+    --sombra-cor: rgb(0 0 0 / 0.45);
+    --brilho-esqueleto: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.06), transparent);
+    color-scheme: dark;
   }
 }
 
@@ -192,25 +192,48 @@
 }
 
 @keyframes sacudir {
-  0%, 100% { transform: rotate(0); }
-  20% { transform: rotate(-14deg); }
-  40% { transform: rotate(12deg); }
-  60% { transform: rotate(-8deg); }
-  80% { transform: rotate(4deg); }
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  20% {
+    transform: rotate(-14deg);
+  }
+  40% {
+    transform: rotate(12deg);
+  }
+  60% {
+    transform: rotate(-8deg);
+  }
+  80% {
+    transform: rotate(4deg);
+  }
 }
 
 @keyframes flutuar {
-  0%, 100% { transform: rotate(12deg) translateY(0); }
-  50% { transform: rotate(6deg) translateY(10px); }
+  0%,
+  100% {
+    transform: rotate(12deg) translateY(0);
+  }
+  50% {
+    transform: rotate(6deg) translateY(10px);
+  }
 }
 
 @keyframes pairar {
-  0%, 100% { transform: translateY(0) rotate(-4deg); }
-  50% { transform: translateY(-10px) rotate(4deg); }
+  0%,
+  100% {
+    transform: translateY(0) rotate(-4deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(4deg);
+  }
 }
 
 @keyframes brilhar {
-  to { transform: translateX(100%); }
+  to {
+    transform: translateX(100%);
+  }
 }
 
 /* Troca de tema: o novo se espalha em círculo a partir do botão (View Transitions). */
@@ -225,8 +248,12 @@
 }
 
 @keyframes espalhar {
-  from { clip-path: circle(0 at var(--vt-x, 50%) var(--vt-y, 0)); }
-  to { clip-path: circle(150vmax at var(--vt-x, 50%) var(--vt-y, 0)); }
+  from {
+    clip-path: circle(0 at var(--vt-x, 50%) var(--vt-y, 0));
+  }
+  to {
+    clip-path: circle(150vmax at var(--vt-x, 50%) var(--vt-y, 0));
+  }
 }
 
 /*

@@ -46,13 +46,27 @@ export function EmprestimosAtivos({ emprestimos }: { emprestimos: Dados }) {
           <caption className="sr-only">Empréstimos em aberto</caption>
           <thead>
             <tr className="border-b border-borda text-tinta-suave">
-              <th scope="col" className={cx(celula, "hidden pt-0 font-medium md:table-cell")}>Nº</th>
-              <th scope="col" className={cx(celula, "pt-0 font-medium")}>Valor</th>
-              <th scope="col" className={cx(celula, "pt-0 font-medium")}>Falta pagar</th>
-              <th scope="col" className={cx(celula, "hidden pt-0 font-medium md:table-cell")}>Duração</th>
-              <th scope="col" className={cx(celula, "hidden pt-0 font-medium md:table-cell")}>Juros</th>
-              <th scope="col" className={cx(celula, "hidden pt-0 font-medium md:table-cell")}>Parcela</th>
-              <th scope="col" className={cx(celula, "pt-0 text-right font-medium")}>Pagar</th>
+              <th scope="col" className={cx(celula, "hidden pt-0 font-medium md:table-cell")}>
+                Nº
+              </th>
+              <th scope="col" className={cx(celula, "pt-0 font-medium")}>
+                Valor
+              </th>
+              <th scope="col" className={cx(celula, "pt-0 font-medium")}>
+                Falta pagar
+              </th>
+              <th scope="col" className={cx(celula, "hidden pt-0 font-medium md:table-cell")}>
+                Duração
+              </th>
+              <th scope="col" className={cx(celula, "hidden pt-0 font-medium md:table-cell")}>
+                Juros
+              </th>
+              <th scope="col" className={cx(celula, "hidden pt-0 font-medium md:table-cell")}>
+                Parcela
+              </th>
+              <th scope="col" className={cx(celula, "pt-0 text-right font-medium")}>
+                Pagar
+              </th>
             </tr>
           </thead>
           <Escalonado como="tbody" intervalo={0.04}>
@@ -72,8 +86,12 @@ export function EmprestimosAtivos({ emprestimos }: { emprestimos: Dados }) {
                   </motion.span>
                 </td>
                 <td className={cx(celula, "hidden md:table-cell")}>{e.meses} meses</td>
-                <td className={cx(celula, "hidden tabular-nums md:table-cell")}>{formatarNumero(e.juros, "percentual")}</td>
-                <td className={cx(celula, "hidden whitespace-nowrap tabular-nums md:table-cell")}>{formatarMoeda(e.parcela)} / mês</td>
+                <td className={cx(celula, "hidden tabular-nums md:table-cell")}>
+                  {formatarNumero(e.juros, "percentual")}
+                </td>
+                <td className={cx(celula, "hidden whitespace-nowrap tabular-nums md:table-cell")}>
+                  {formatarMoeda(e.parcela)} / mês
+                </td>
                 <td className={cx(celula, "text-right")}>
                   <Botao
                     variante="contorno"
@@ -85,7 +103,13 @@ export function EmprestimosAtivos({ emprestimos }: { emprestimos: Dados }) {
                     onClick={() => pagar(e.id, e.parcela)}
                   >
                     <AnimatePresence mode="wait" initial={false}>
-                      <motion.span key={String(pago === e.id)} className="flex items-center gap-1" initial={{ opacity: 0, y: -6 }} animate={{ opacity: 1, y: 0 }} transition={mola}>
+                      <motion.span
+                        key={String(pago === e.id)}
+                        className="flex items-center gap-1"
+                        initial={{ opacity: 0, y: -6 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={mola}
+                      >
                         {pago === e.id ? (
                           <>
                             <RiCheckLine aria-hidden="true" className="size-4" /> Pago
@@ -104,7 +128,9 @@ export function EmprestimosAtivos({ emprestimos }: { emprestimos: Dados }) {
           </Escalonado>
           <tfoot>
             <tr className="font-medium text-perigo">
-              <th scope="row" className={cx(celula, "hidden pb-0 font-medium md:table-cell")}>Total</th>
+              <th scope="row" className={cx(celula, "hidden pb-0 font-medium md:table-cell")}>
+                Total
+              </th>
               <td className={cx(celula, "valor-sensivel pb-0 tabular-nums")}>
                 <span className="md:hidden">Total: </span>
                 {formatarMoeda(totais.valor)}
@@ -114,7 +140,9 @@ export function EmprestimosAtivos({ emprestimos }: { emprestimos: Dados }) {
               </td>
               <td className={cx(celula, "hidden pb-0 md:table-cell")} />
               <td className={cx(celula, "hidden pb-0 md:table-cell")} />
-              <td className={cx(celula, "hidden whitespace-nowrap pb-0 tabular-nums md:table-cell")}>{formatarMoeda(totais.parcela)} / mês</td>
+              <td className={cx(celula, "hidden pb-0 whitespace-nowrap tabular-nums md:table-cell")}>
+                {formatarMoeda(totais.parcela)} / mês
+              </td>
               <td className={cx(celula, "pb-0")} />
             </tr>
           </tfoot>

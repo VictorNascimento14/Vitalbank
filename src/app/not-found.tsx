@@ -12,7 +12,7 @@ export default function NaoEncontrada() {
         <SimboloVitalbank className="mx-auto size-20 motion-safe:animate-[pairar_4s_ease-in-out_infinite]" />
       </Surgir>
       <Surgir atraso={0.1}>
-        <p className="bg-(image:--gradiente-cartao-escuro) bg-clip-text text-[96px] font-extrabold leading-none text-transparent md:text-[140px]">
+        <p className="bg-(image:--gradiente-cartao-escuro) bg-clip-text text-[96px] leading-none font-extrabold text-transparent md:text-[140px]">
           404
         </p>
       </Surgir>
@@ -23,7 +23,7 @@ export default function NaoEncontrada() {
         </p>
         <Link
           href="/"
-          className="mt-4 inline-flex h-12 items-center rounded-campo bg-primaria px-8 font-medium text-white shadow-[0_8px_20px_-8px_var(--primaria)] transition-colors hover:bg-primaria-viva focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primaria-viva focus-visible:ring-offset-2"
+          className="mt-4 inline-flex h-12 items-center rounded-campo bg-primaria px-8 font-medium text-white shadow-[0_8px_20px_-8px_var(--primaria)] transition-colors hover:bg-primaria-viva focus-visible:ring-2 focus-visible:ring-primaria-viva focus-visible:ring-offset-2 focus-visible:outline-none"
         >
           Voltar para a visão geral
         </Link>

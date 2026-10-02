@@ -42,7 +42,7 @@ export function Casca({ children, nomeDoCliente, notificacoes, busca }: Props) {
     <div className="flex min-h-dvh">
       <a
         href="#conteudo"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-campo focus:bg-superficie focus:px-4 focus:py-2 focus:shadow-cartao"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-campo focus:bg-superficie focus:px-4 focus:py-2 focus:shadow-cartao"
       >
         Pular para o conteúdo
       </a>

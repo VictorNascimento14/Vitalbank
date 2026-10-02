@@ -56,7 +56,8 @@ export function TransferenciaRapida({ contatos }: { contatos: readonly Contato[]
     e.preventDefault();
     const centavos = paraCentavos(valor);
     if (!pessoa) return setEstado({ tipo: "erro", mensagem: "Escolha para quem enviar." });
-    if (centavos === null || centavos <= 0) return setEstado({ tipo: "erro", mensagem: "Digite um valor, como 525,50." });
+    if (centavos === null || centavos <= 0)
+      return setEstado({ tipo: "erro", mensagem: "Digite um valor, como 525,50." });
     setEstado({ tipo: "enviado", texto: `${formatarMoeda(centavos)} para ${pessoa.nome}` });
     window.setTimeout(() => setEstado({ tipo: "editando" }), 3200);
   }
@@ -77,7 +78,7 @@ export function TransferenciaRapida({ contatos }: { contatos: readonly Contato[]
                       type="button"
                       aria-pressed={ativo}
                       onClick={() => setEscolhido(c.id)}
-                      className="group flex w-full flex-col items-center gap-2 rounded-campo py-2 text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primaria-viva"
+                      className="group flex w-full flex-col items-center gap-2 rounded-campo py-2 text-center focus-visible:ring-2 focus-visible:ring-primaria-viva focus-visible:outline-none"
                     >
                       <motion.span animate={{ scale: ativo ? 1.08 : 1 }} transition={mola} className="relative">
                         <Avatar nome={c.nome} tamanho="lg" />
@@ -89,10 +90,20 @@ export function TransferenciaRapida({ contatos }: { contatos: readonly Contato[]
                           />
                         )}
                       </motion.span>
-                      <span className={cx("text-legenda md:text-corpo", ativo ? "font-bold text-tinta-forte" : "text-tinta-forte")}>
+                      <span
+                        className={cx(
+                          "text-legenda md:text-corpo",
+                          ativo ? "font-bold text-tinta-forte" : "text-tinta-forte",
+                        )}
+                      >
                         {c.nome.split(" ")[0]}
                       </span>
-                      <span className={cx("-mt-1.5 text-legenda", ativo ? "font-bold text-tinta-suave" : "text-tinta-suave")}>
+                      <span
+                        className={cx(
+                          "-mt-1.5 text-legenda",
+                          ativo ? "font-bold text-tinta-suave" : "text-tinta-suave",
+                        )}
+                      >
                         {c.cargo}
                       </span>
                     </button>
@@ -107,14 +118,17 @@ export function TransferenciaRapida({ contatos }: { contatos: readonly Contato[]
             onClick={avancar}
             whileHover={{ x: 3 }}
             whileTap={{ scale: 0.9 }}
-            className="grid size-[50px] shrink-0 place-items-center rounded-full bg-superficie text-tinta-suave shadow-cartao transition-colors hover:text-primaria focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primaria-viva"
+            className="grid size-[50px] shrink-0 place-items-center rounded-full bg-superficie text-tinta-suave shadow-cartao transition-colors hover:text-primaria focus-visible:ring-2 focus-visible:ring-primaria-viva focus-visible:outline-none"
           >
             <RiArrowRightSLine aria-hidden="true" className="size-6" />
           </motion.button>
         </div>
 
         <form onSubmit={enviar} noValidate className="flex items-center gap-4 md:gap-6">
-          <label htmlFor="valor-transferencia" className="hidden shrink-0 text-rotulo text-tinta-suave sm:block md:text-corpo">
+          <label
+            htmlFor="valor-transferencia"
+            className="hidden shrink-0 text-rotulo text-tinta-suave sm:block md:text-corpo"
+          >
             Valor
           </label>
           <div className="relative flex h-[50px] flex-1 items-center rounded-full bg-fundo">
@@ -132,7 +146,7 @@ export function TransferenciaRapida({ contatos }: { contatos: readonly Contato[]
                 setValor(e.target.value);
                 if (estado.tipo === "erro") setEstado({ tipo: "editando" });
               }}
-              className="h-full w-full min-w-0 rounded-full bg-transparent pl-2 pr-[130px] text-rotulo text-tinta-forte focus:outline-none md:pr-[140px]"
+              className="h-full w-full min-w-0 rounded-full bg-transparent pr-[130px] pl-2 text-rotulo text-tinta-forte focus:outline-none md:pr-[140px]"
             />
             <motion.button
               type="submit"
@@ -140,19 +154,34 @@ export function TransferenciaRapida({ contatos }: { contatos: readonly Contato[]
               whileTap={{ scale: 0.95 }}
               className={cx(
                 "absolute inset-y-0 right-0 flex w-[125px] items-center justify-center gap-2.5 overflow-hidden rounded-full font-medium text-white md:w-[135px]",
-                "shadow-[0_10px_24px_-10px_var(--primaria)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primaria-viva focus-visible:ring-offset-2",
+                "shadow-[0_10px_24px_-10px_var(--primaria)] transition-colors focus-visible:ring-2 focus-visible:ring-primaria-viva focus-visible:ring-offset-2 focus-visible:outline-none",
                 enviado ? "bg-sucesso" : "bg-primaria hover:bg-primaria-viva",
               )}
             >
               <AnimatePresence mode="wait" initial={false}>
                 {enviado ? (
-                  <motion.span key="ok" className="flex items-center gap-2" initial={{ scale: 0.4, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ opacity: 0 }}>
+                  <motion.span
+                    key="ok"
+                    className="flex items-center gap-2"
+                    initial={{ scale: 0.4, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                  >
                     <RiCheckLine aria-hidden="true" className="size-5" /> Enviado
                   </motion.span>
                 ) : (
-                  <motion.span key="enviar" className="flex items-center gap-2.5" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+                  <motion.span
+                    key="enviar"
+                    className="flex items-center gap-2.5"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                  >
                     Enviar
-                    <motion.span exit={{ x: 60, y: -30, rotate: -20, opacity: 0 }} transition={{ duration: duracao.media }}>
+                    <motion.span
+                      exit={{ x: 60, y: -30, rotate: -20, opacity: 0 }}
+                      transition={{ duration: duracao.media }}
+                    >
                       <RiSendPlaneFill aria-hidden="true" className="size-5" />
                     </motion.span>
                   </motion.span>
@@ -161,7 +190,11 @@ export function TransferenciaRapida({ contatos }: { contatos: readonly Contato[]
             </motion.button>
           </div>
         </form>
-        <p id="retorno-transferencia" role="status" className={cx("-mt-4 min-h-5 text-legenda", estado.tipo === "erro" ? "text-perigo" : "text-tinta-suave")}>
+        <p
+          id="retorno-transferencia"
+          role="status"
+          className={cx("-mt-4 min-h-5 text-legenda", estado.tipo === "erro" ? "text-perigo" : "text-tinta-suave")}
+        >
           {estado.tipo === "erro" && estado.mensagem}
           {estado.tipo === "enviado" && `${estado.texto} — demonstração: nada saiu da sua conta.`}
         </p>

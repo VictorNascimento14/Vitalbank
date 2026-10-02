@@ -17,14 +17,7 @@ interface Props {
 }
 
 /** Interruptor liga/desliga (`role="switch"`), com a bolinha deslizando em mola. */
-export function Alternador({
-  rotulo,
-  ligado,
-  ligadoInicial = false,
-  aoMudar,
-  disabled,
-  className,
-}: Props) {
+export function Alternador({ rotulo, ligado, ligadoInicial = false, aoMudar, disabled, className }: Props) {
   const id = useId();
   const [interno, setInterno] = useState(ligadoInicial);
   const atual = ligado ?? interno;
@@ -47,16 +40,12 @@ export function Alternador({
         className={cx(
           "relative flex h-[31px] w-14 shrink-0 cursor-pointer items-center rounded-full p-[3px]",
           "transition-colors duration-300 ease-saida",
-          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primaria-viva focus-visible:ring-offset-2",
+          "focus-visible:ring-2 focus-visible:ring-primaria-viva focus-visible:ring-offset-2 focus-visible:outline-none",
           "disabled:cursor-not-allowed disabled:opacity-50",
           atual ? "justify-end bg-turquesa" : "justify-start bg-borda-campo",
         )}
       >
-        <motion.span
-          layout
-          transition={mola}
-          className="size-[25px] rounded-full bg-superficie shadow-bolinha"
-        />
+        <motion.span layout transition={mola} className="size-[25px] rounded-full bg-superficie shadow-bolinha" />
       </button>
       <label htmlFor={id} className="cursor-pointer text-rotulo text-tinta-forte md:text-corpo">
         {rotulo}

@@ -1,11 +1,5 @@
 import { describe, expect, test } from "vitest";
-import {
-  agruparDigitos,
-  finalDoCartao,
-  mascararCartao,
-  passaNoLuhn,
-  validadeEmDia,
-} from "./cartao";
+import { agruparDigitos, finalDoCartao, mascararCartao, passaNoLuhn, validadeEmDia } from "./cartao";
 
 /** Completa 15 dígitos com o verificador de Luhn — nada de número fixo no teste. */
 function comVerificador(quinze: string): string {

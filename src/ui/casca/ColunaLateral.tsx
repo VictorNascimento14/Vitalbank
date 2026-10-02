@@ -21,9 +21,7 @@ interface Props {
 export function ColunaLateral({ aoNavegar, className }: Props) {
   const ativo = itemAtivo(usePathname());
   return (
-    <aside
-      className={cx("flex h-full w-coluna flex-col border-r border-borda bg-superficie", className)}
-    >
+    <aside className={cx("flex h-full w-coluna flex-col border-r border-borda bg-superficie", className)}>
       <div className="flex h-cabecalho shrink-0 items-center px-9">
         <Link href="/" aria-label="Vitalbank — visão geral" onClick={aoNavegar}>
           <Marca />
@@ -47,9 +45,9 @@ export function ColunaLateral({ aoNavegar, className }: Props) {
                   aria-current={atual ? "page" : undefined}
                   onClick={aoNavegar}
                   className={cx(
-                    "group flex h-[60px] items-center gap-5 whitespace-nowrap pl-10 pr-4 text-menu font-medium",
+                    "group flex h-[60px] items-center gap-5 pr-4 pl-10 text-menu font-medium whitespace-nowrap",
                     "transition-colors duration-200 ease-saida",
-                    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primaria-viva",
+                    "focus-visible:ring-2 focus-visible:ring-primaria-viva focus-visible:outline-none focus-visible:ring-inset",
                     atual ? "text-primaria" : "text-tinta-apagada hover:text-tinta",
                   )}
                 >

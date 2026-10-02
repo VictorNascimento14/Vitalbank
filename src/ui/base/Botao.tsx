@@ -20,8 +20,7 @@ interface Props extends Omit<HTMLMotionProps<"button">, "children"> {
 
 const variantes: Record<Variante, string> = {
   solido: "bg-primaria text-white shadow-[0_8px_20px_-8px_var(--primaria)] hover:bg-primaria-viva",
-  contorno:
-    "border border-tinta text-tinta hover:border-primaria hover:bg-primaria hover:text-white",
+  contorno: "border border-tinta text-tinta hover:border-primaria hover:bg-primaria hover:text-white",
   fantasma: "text-primaria-viva hover:bg-azul-claro",
 };
 
@@ -53,9 +52,9 @@ export function Botao({
       whileTap={disabled ? undefined : { scale: 0.96 }}
       transition={{ duration: duracao.rapida }}
       className={cx(
-        "inline-flex select-none items-center justify-center gap-2.5 font-medium whitespace-nowrap",
+        "inline-flex items-center justify-center gap-2.5 font-medium whitespace-nowrap select-none",
         "transition-colors duration-200 ease-saida",
-        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primaria-viva focus-visible:ring-offset-2",
+        "focus-visible:ring-2 focus-visible:ring-primaria-viva focus-visible:ring-offset-2 focus-visible:outline-none",
         "disabled:cursor-not-allowed disabled:opacity-50",
         forma === "pilula" ? "rounded-full" : "rounded-campo",
         variantes[variante],

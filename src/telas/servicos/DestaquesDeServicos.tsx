@@ -15,7 +15,7 @@ export function DestaquesDeServicos() {
     <section aria-label="Serviços em destaque">
       <Escalonado
         como="ul"
-        className="-mx-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-2 md:mx-0 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible md:px-0 xl:gap-[30px] [scrollbar-width:none]"
+        className="-mx-6 flex snap-x snap-mandatory [scrollbar-width:none] gap-4 overflow-x-auto px-6 pb-2 md:mx-0 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible md:px-0 xl:gap-[30px]"
       >
         {DESTAQUES.map((d) => (
           <ItemEscalonado key={d.titulo} como="li" className="w-[230px] shrink-0 snap-start md:w-auto">

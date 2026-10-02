@@ -30,9 +30,12 @@ export function EditarPerfil({ perfil }: { perfil: Perfil }) {
   const [foto, setFoto] = useState<string | null>(null);
   const arquivo = useRef<HTMLInputElement>(null);
 
-  useEffect(() => () => {
-    if (foto) URL.revokeObjectURL(foto);
-  }, [foto]);
+  useEffect(
+    () => () => {
+      if (foto) URL.revokeObjectURL(foto);
+    },
+    [foto],
+  );
 
   const campo = (chave: keyof Perfil) => ({
     value: dados[chave],
@@ -55,7 +58,11 @@ export function EditarPerfil({ perfil }: { perfil: Perfil }) {
       <div className="relative mx-auto size-fit shrink-0 lg:mx-0">
         {foto ? (
           // eslint-disable-next-line @next/next/no-img-element -- prévia local (blob:), não passa pelo otimizador
-          <img src={foto} alt={`Foto de ${dados.nome}`} className="size-[90px] rounded-full object-cover md:size-[130px]" />
+          <img
+            src={foto}
+            alt={`Foto de ${dados.nome}`}
+            className="size-[90px] rounded-full object-cover md:size-[130px]"
+          />
         ) : (
           <Avatar nome={dados.nome} tamanho="xl" />
         )}
@@ -65,7 +72,7 @@ export function EditarPerfil({ perfil }: { perfil: Perfil }) {
           whileHover={{ scale: 1.1, rotate: -12 }}
           whileTap={{ scale: 0.9 }}
           onClick={() => arquivo.current?.click()}
-          className="absolute bottom-0 right-0 grid size-[30px] place-items-center rounded-full bg-primaria text-white ring-4 ring-superficie focus-visible:outline-none focus-visible:ring-primaria-viva"
+          className="absolute right-0 bottom-0 grid size-[30px] place-items-center rounded-full bg-primaria text-white ring-4 ring-superficie focus-visible:ring-primaria-viva focus-visible:outline-none"
         >
           <RiPencilFill aria-hidden="true" className="size-4" />
         </motion.button>
