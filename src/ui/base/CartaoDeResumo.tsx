@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { cx } from "../cx";
-import { NumeroAnimado, type FormatoDeNumero } from "../movimento/NumeroAnimado";
+import type { FormatoDeNumero } from "@/dominio/numero";
+import { NumeroAnimado } from "../movimento/NumeroAnimado";
 import { PastilhaDeIcone, type Tom } from "./PastilhaDeIcone";
 
 interface Props {
