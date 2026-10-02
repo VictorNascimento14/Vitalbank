@@ -7,3 +7,4 @@ export { Campo } from "./base/Campo";
 export { PastilhaDeIcone, type Tom } from "./base/PastilhaDeIcone";
 export { TituloDeSecao } from "./base/TituloDeSecao";
 export { cx } from "./cx";
+export { Marca, SimboloVitalbank } from "./casca/Marca";
