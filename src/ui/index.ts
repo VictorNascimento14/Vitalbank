@@ -14,3 +14,4 @@ export { Cabecalho } from "./casca/Cabecalho";
 export { Casca } from "./casca/Casca";
 export { EmBreve } from "./casca/EmBreve";
 export { CartaoDeCredito } from "./cartao/CartaoDeCredito";
+export { GraficoDeBarras, type Serie } from "./graficos/GraficoDeBarras";
