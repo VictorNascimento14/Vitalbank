@@ -16,7 +16,7 @@ export function pagarParcela(faltaPagar: number, parcela: number): number {
   return Math.max(0, faltaPagar - parcela);
 }
 
-const celula = "px-3 py-3.5 first:pl-0 last:pr-0";
+const celula = "px-1.5 py-3.5 first:pl-0 last:pr-0 md:px-3";
 
 /**
  * Empréstimos ativos. "Pagar" abate uma parcela do que falta (demonstração: nada sai da
@@ -41,8 +41,8 @@ export function EmprestimosAtivos({ emprestimos }: { emprestimos: Dados }) {
   return (
     <section aria-labelledby="emprestimos-ativos">
       <TituloDeSecao id="emprestimos-ativos">Empréstimos ativos</TituloDeSecao>
-      <Bloco className="overflow-x-auto">
-        <table className="w-full min-w-[320px] text-left text-legenda md:text-corpo">
+      <Bloco className="overflow-x-auto px-3! md:px-6!">
+        <table className="w-full text-left text-legenda md:text-corpo">
           <caption className="sr-only">Empréstimos em aberto</caption>
           <thead>
             <tr className="border-b border-borda text-tinta-suave">
@@ -79,7 +79,7 @@ export function EmprestimosAtivos({ emprestimos }: { emprestimos: Dados }) {
                     variante="contorno"
                     tamanho="sm"
                     forma="pilula"
-                    className="w-[96px]"
+                    className="w-16 px-0! md:w-[96px]"
                     disabled={falta[e.id] === 0}
                     aria-label={`Pagar parcela do empréstimo ${i + 1}`}
                     onClick={() => pagar(e.id, e.parcela)}

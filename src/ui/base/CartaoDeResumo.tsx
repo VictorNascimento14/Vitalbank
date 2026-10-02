@@ -17,13 +17,14 @@ interface Props {
 
 /**
  * Os cartões de resumo do kit (Contas, Investimentos, Empréstimos): pastilha, rótulo e um
- * número que conta até o valor. Sobe e ganha sombra com o mouse.
+ * número que conta até o valor. Sobe e ganha sombra com o mouse. Abaixo de `sm`, em duas
+ * colunas de ~155 px, a pastilha vai para cima do texto: "R$ 500.000,00" não cabe ao lado.
  */
 export function CartaoDeResumo({ rotulo, valor, texto, formato = "moeda", tom, icone, className }: Props) {
   return (
     <div
       className={cx(
-        "group flex items-center gap-3 rounded-cartao bg-superficie px-4 py-4 md:gap-4 md:px-6 md:py-6 xl:gap-5",
+        "group flex flex-col items-start gap-3 rounded-cartao bg-superficie px-4 py-4 sm:flex-row sm:items-center md:gap-4 md:px-6 md:py-6 xl:gap-5",
         "transition-[translate,box-shadow] duration-300 ease-saida hover:-translate-y-1 hover:shadow-cartao",
         className,
       )}
