@@ -77,7 +77,7 @@ e atualizá-lo faz parte da tarefa que descobriu a divergência, no **mesmo PR**
     origem do dado.**
   - `src/dominio/` — regras puras (dinheiro, datas, máscara de cartão). Sem React.
   - `src/telas/<tela>/` — os blocos de cada tela (`CartoesDoDashboard`, `AtividadeSemanal`…).
-- Checks: `pnpm lint` · `pnpm type-check` · `pnpm test` (Vitest) · `pnpm build`. O CI roda os quatro.
+- Checks: `pnpm format:check` · `pnpm lint` · `pnpm type-check` · `pnpm test` (Vitest) · `pnpm build`. O CI roda os cinco; `pnpm format` corrige a formatação.
 - Textos da interface em **português do Brasil**, com acentuação correta.
 
 ---
@@ -146,7 +146,7 @@ Quando o usuário disser **"publicar"**, **"publique"** ou pedir para "abrir PR"
    `docs/`, `chore/`, `test/`.
 3. **Commit atômico (Conventional Commits)** — `tipo(escopo): descrição no imperativo`. Só os arquivos
    da mudança.
-4. **Checks locais**: `pnpm lint && pnpm type-check && pnpm test && pnpm build`.
+4. **Checks locais**: `pnpm format:check && pnpm lint && pnpm type-check && pnpm test && pnpm build`.
 5. **Cofre Obsidian** (`$VITALBANK_VAULT`), **antes** do `gh pr create`:
    - Nota do PR em `01 - PRs/2026/YYYY-MM-DD-pr-NNN-<slug>.md` (template `09 - Templates/template-pr.md`).
    - Nota nova/atualizada de funcionalidade em `05 - Frontend/`.
