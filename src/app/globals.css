@@ -39,6 +39,9 @@
 }
 
 @theme inline {
+  --font-sans: var(--fonte-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-cartao: var(--fonte-lato), var(--fonte-inter), sans-serif;
+
   --color-primaria: var(--primaria);
   --color-primaria-viva: var(--primaria-viva);
   --color-azul: var(--azul);
