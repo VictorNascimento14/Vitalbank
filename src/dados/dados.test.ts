@@ -41,6 +41,12 @@ describe("transações", () => {
     for (const t of await listarTransacoes()) expect(finais).toContain(t.cartao);
   });
 
+  test("códigos únicos no formato do extrato", async () => {
+    const codigos = (await listarTransacoes()).map((t) => t.codigo);
+    for (const c of codigos) expect(c).toMatch(/^#\d{8}$/);
+    expect(new Set(codigos).size).toBe(codigos.length);
+  });
+
   test("limite corta a lista", async () => {
     expect(await listarTransacoes({ limite: 3 })).toHaveLength(3);
   });

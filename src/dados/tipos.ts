@@ -29,6 +29,8 @@ export type CategoriaDeTransacao =
 
 export interface Transacao {
   id: string;
+  /** Código que aparece no extrato e no recibo ("#12548701"). */
+  codigo: string;
   descricao: string;
   categoria: CategoriaDeTransacao;
   /** `AAAA-MM-DD` ou `AAAA-MM-DDTHH:mm`. */
