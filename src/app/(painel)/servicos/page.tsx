@@ -1,6 +1,9 @@
+import { metadadosDaTela } from "@/ui/casca/navegacao";
 import { listarServicos } from "@/dados";
 import { DestaquesDeServicos } from "@/telas/servicos/DestaquesDeServicos";
 import { ListaDeServicos } from "@/telas/servicos/ListaDeServicos";
+
+export const metadata = metadadosDaTela("/servicos");
 
 export default async function Servicos() {
   const servicos = await listarServicos();

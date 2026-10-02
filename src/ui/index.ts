@@ -13,7 +13,7 @@ export { TituloDeSecao } from "./base/TituloDeSecao";
 export { cx } from "./cx";
 export { Marca, SimboloVitalbank } from "./casca/Marca";
 export { ColunaLateral } from "./casca/ColunaLateral";
-export { itemAtivo, NAVEGACAO, type ItemDeNavegacao } from "./casca/navegacao";
+export { itemAtivo, metadadosDaTela, NAVEGACAO, type ItemDeNavegacao } from "./casca/navegacao";
 export { Cabecalho } from "./casca/Cabecalho";
 export { Casca } from "./casca/Casca";
 export { EmBreve } from "./casca/EmBreve";

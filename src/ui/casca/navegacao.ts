@@ -40,3 +40,10 @@ export function itemAtivo(caminho: string): ItemDeNavegacao | undefined {
     i.rota === "/" ? limpo === "/" : limpo === i.rota || limpo.startsWith(`${i.rota}/`),
   );
 }
+
+/** Metadados da aba para a tela da rota: título "Transações · Vitalbank". */
+export function metadadosDaTela(rota: string): { title: string } {
+  const item = NAVEGACAO.find((i) => i.rota === rota);
+  if (!item) throw new Error(`rota fora da navegação: ${rota}`);
+  return { title: item.titulo };
+}

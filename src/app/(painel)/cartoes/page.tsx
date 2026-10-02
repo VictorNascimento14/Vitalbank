@@ -1,9 +1,12 @@
+import { metadadosDaTela } from "@/ui/casca/navegacao";
 import { listarCartoes, listarTransacoes } from "@/dados";
 import { AdicionarCartao } from "@/telas/cartoes/AdicionarCartao";
 import { ConfiguracoesDoCartao } from "@/telas/cartoes/ConfiguracoesDoCartao";
 import { GastoPorCartao } from "@/telas/cartoes/GastoPorCartao";
 import { ListaDeCartoes } from "@/telas/cartoes/ListaDeCartoes";
 import { MeusCartoes } from "@/telas/comum/MeusCartoes";
+
+export const metadata = metadadosDaTela("/cartoes");
 
 export default async function CartoesDeCredito() {
   const [cartoes, transacoes] = await Promise.all([listarCartoes(), listarTransacoes()]);

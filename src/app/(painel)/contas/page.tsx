@@ -1,9 +1,12 @@
+import { metadadosDaTela } from "@/ui/casca/navegacao";
 import { debitoECredito, faturasEnviadas, listarCartoes, listarTransacoes, resumoDaConta } from "@/dados";
 import { DebitoECredito } from "@/telas/contas/DebitoECredito";
 import { FaturasEnviadas } from "@/telas/contas/FaturasEnviadas";
 import { MeuCartao } from "@/telas/contas/MeuCartao";
 import { ResumoDaConta } from "@/telas/contas/ResumoDaConta";
 import { UltimaTransacao } from "@/telas/contas/UltimaTransacao";
+
+export const metadata = metadadosDaTela("/contas");
 
 export default async function Contas() {
   const [resumo, transacoes, cartoes, semana, faturas] = await Promise.all([
