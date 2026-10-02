@@ -6,6 +6,7 @@ import { ATIVIDADE_SEMANAL } from "./sementes/atividade";
 import { CARTOES } from "./sementes/cartoes";
 import { RESUMO_DA_CONTA } from "./sementes/conta";
 import { CONTATOS } from "./sementes/contatos";
+import { DEBITO_E_CREDITO } from "./sementes/debitoCredito";
 import { DESPESAS_POR_CATEGORIA } from "./sementes/despesas";
 import { DESPESAS_MENSAIS } from "./sementes/despesasMensais";
 import { HISTORICO_DE_SALDO } from "./sementes/saldo";
@@ -47,4 +48,9 @@ export async function despesasMensais() {
 /** Saldo, receitas e despesas do mês e o total poupado. */
 export async function resumoDaConta() {
   return RESUMO_DA_CONTA;
+}
+
+/** Débitos e créditos por dia, últimos 7 dias. */
+export async function debitoECredito() {
+  return DEBITO_E_CREDITO;
 }
