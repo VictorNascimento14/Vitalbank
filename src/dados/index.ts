@@ -4,6 +4,7 @@
  */
 import { ATIVIDADE_SEMANAL } from "./sementes/atividade";
 import { CARTOES } from "./sementes/cartoes";
+import { RESUMO_DA_CONTA } from "./sementes/conta";
 import { CONTATOS } from "./sementes/contatos";
 import { DESPESAS_POR_CATEGORIA } from "./sementes/despesas";
 import { DESPESAS_MENSAIS } from "./sementes/despesasMensais";
@@ -41,4 +42,9 @@ export async function historicoDeSaldo() {
 /** Total gasto por mês, seis meses, do mais antigo ao atual. */
 export async function despesasMensais() {
   return DESPESAS_MENSAIS;
+}
+
+/** Saldo, receitas e despesas do mês e o total poupado. */
+export async function resumoDaConta() {
+  return RESUMO_DA_CONTA;
 }
