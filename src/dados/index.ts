@@ -8,6 +8,7 @@ import { RESUMO_DA_CONTA } from "./sementes/conta";
 import { CONTATOS } from "./sementes/contatos";
 import { DEBITO_E_CREDITO } from "./sementes/debitoCredito";
 import { DESPESAS_POR_CATEGORIA } from "./sementes/despesas";
+import { LINHAS_DE_CREDITO } from "./sementes/emprestimos";
 import { DESPESAS_MENSAIS } from "./sementes/despesasMensais";
 import { FATURAS_ENVIADAS } from "./sementes/faturas";
 import {
@@ -92,4 +93,9 @@ export async function listarCarteira() {
 /** Ações com maior movimento no dia. */
 export async function acoesEmAlta() {
   return ACOES_EM_ALTA;
+}
+
+/** Limites das linhas de crédito pré-aprovadas. */
+export async function linhasDeCredito() {
+  return LINHAS_DE_CREDITO;
 }
