@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, test } from "vitest";
-import { formatarNumero, NumeroAnimado } from "./NumeroAnimado";
+import { formatarNumero } from "@/dominio/numero";
+import { NumeroAnimado } from "./NumeroAnimado";
 
 const nbsp = (t: string) => t.replace(/ /g, " ");
 

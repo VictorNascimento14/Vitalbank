@@ -3,7 +3,7 @@
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 import { cx } from "../cx";
-import { formatarNumero, type FormatoDeNumero } from "../movimento/NumeroAnimado";
+import { formatarNumero, type FormatoDeNumero } from "@/dominio/numero";
 import { curvaSaida, duracao } from "../movimento/ritmo";
 import { escalaLinear, marcasDoEixo } from "./escala";
 
