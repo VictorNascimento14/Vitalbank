@@ -2,9 +2,9 @@ import type { Transacao } from "../tipos";
 
 /** Movimentos fictícios, do mais recente para o mais antigo. */
 export const TRANSACOES: readonly Transacao[] = [
-  { id: "t01", descricao: "Depósito do meu cartão", categoria: "deposito", data: "2026-09-28T09:12", valor: -85000, cartao: "1234", situacao: "concluida", meio: "cartao" },
-  { id: "t02", descricao: "Depósito via PayPal", categoria: "deposito", data: "2026-09-25T14:40", valor: 250000, cartao: "1234", situacao: "concluida", meio: "paypal" },
-  { id: "t03", descricao: "Pix de Joana Wilson", categoria: "transferencia", data: "2026-09-21T18:05", valor: 540000, cartao: "1234", situacao: "concluida", meio: "pix" },
+  { id: "t01", descricao: "Fatura do cartão", categoria: "servico", data: "2026-09-28T09:12", valor: -85000, cartao: "1234", situacao: "concluida", meio: "cartao" },
+  { id: "t02", descricao: "Depósito PayPal", categoria: "deposito", data: "2026-09-25T14:40", valor: 250000, cartao: "1234", situacao: "concluida", meio: "paypal" },
+  { id: "t03", descricao: "Joana Wilson", categoria: "transferencia", data: "2026-09-21T18:05", valor: 540000, cartao: "1234", situacao: "concluida", meio: "pix" },
   { id: "t04", descricao: "Assinatura de música", categoria: "assinatura", data: "2026-09-20T12:30", valor: -2490, cartao: "1234", situacao: "pendente", meio: "cartao" },
   { id: "t05", descricao: "Venda de ilustrações", categoria: "transferencia", data: "2026-09-18T22:40", valor: 75000, cartao: "5600", situacao: "concluida", meio: "pix" },
   { id: "t06", descricao: "Plano de celular", categoria: "servico", data: "2026-09-15T10:40", valor: -15000, cartao: "1234", situacao: "concluida", meio: "cartao" },
