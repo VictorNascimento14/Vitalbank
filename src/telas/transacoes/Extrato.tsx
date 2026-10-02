@@ -3,6 +3,7 @@
 import { useState } from "react";
 import type { Transacao } from "@/dados";
 import { Abas, Bloco, Paginacao, TituloDeSecao } from "@/ui";
+import { BaixarRecibo } from "./BaixarRecibo";
 import { TabelaDeTransacoes } from "./TabelaDeTransacoes";
 
 const POR_PAGINA = 5;
@@ -40,7 +41,11 @@ export function Extrato({ transacoes }: { transacoes: readonly Transacao[] }) {
           conteudo: (
             <>
               <Bloco>
-                <TabelaDeTransacoes key={`${id}-${atual}`} transacoes={pedaco} />
+                <TabelaDeTransacoes
+                  key={`${id}-${atual}`}
+                  transacoes={pedaco}
+                  acao={(t) => <BaixarRecibo transacao={t} />}
+                />
               </Bloco>
               <Paginacao className="mt-6" pagina={atual} total={total} aoMudar={setPagina} />
             </>
