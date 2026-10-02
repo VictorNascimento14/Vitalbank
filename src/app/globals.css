@@ -1,1 +1,101 @@
 @import "tailwindcss";
+
+/*
+ * Tokens do Vitalbank, lidos do UI kit BankDash (Figma). Tabela e papel de cada um:
+ * `linguagem-visual` no cofre. Mudar um valor aqui repinta o app inteiro — é a alavanca
+ * para retonalizar, nunca para acertar uma tela.
+ *
+ * As cores moram em variáveis de :root para o tema escuro poder redefini-las sem tocar
+ * em componente; o @theme inline só as expõe como utilidades do Tailwind.
+ */
+:root {
+  --primaria: #1814f3;
+  --primaria-viva: #2d60ff;
+  --azul: #396aff;
+
+  --tinta: #343c6a;
+  --tinta-forte: #232323;
+  --tinta-suave: #718ebf;
+  --tinta-apagada: #b1b1b1;
+
+  --fundo: #f5f7fa;
+  --superficie: #ffffff;
+  --borda: #e6eff5;
+  --borda-campo: #dfeaf2;
+
+  --sucesso: #16dbaa;
+  --turquesa: #16dbcc;
+  --perigo: #fe5c73;
+  --alerta: #ffbb38;
+  --laranja: #feaa09;
+  --rosa: #ff82ac;
+
+  --amarelo-claro: #fff5d9;
+  --azul-claro: #e7edff;
+  --turquesa-clara: #dcfaf8;
+  --rosa-claro: #ffe0eb;
+
+  --sombra-cor: rgb(231 228 232 / 0.8);
+}
+
+@theme inline {
+  --color-primaria: var(--primaria);
+  --color-primaria-viva: var(--primaria-viva);
+  --color-azul: var(--azul);
+
+  --color-tinta: var(--tinta);
+  --color-tinta-forte: var(--tinta-forte);
+  --color-tinta-suave: var(--tinta-suave);
+  --color-tinta-apagada: var(--tinta-apagada);
+
+  --color-fundo: var(--fundo);
+  --color-superficie: var(--superficie);
+  --color-borda: var(--borda);
+  --color-borda-campo: var(--borda-campo);
+
+  --color-sucesso: var(--sucesso);
+  --color-turquesa: var(--turquesa);
+  --color-perigo: var(--perigo);
+  --color-alerta: var(--alerta);
+  --color-laranja: var(--laranja);
+  --color-rosa: var(--rosa);
+
+  --color-amarelo-claro: var(--amarelo-claro);
+  --color-azul-claro: var(--azul-claro);
+  --color-turquesa-clara: var(--turquesa-clara);
+  --color-rosa-claro: var(--rosa-claro);
+
+  --shadow-cartao: 4px 4px 18px -2px var(--sombra-cor);
+}
+
+@theme {
+  --radius-cartao: 25px;
+  --radius-bloco: 20px;
+  --radius-campo: 15px;
+  --radius-miudo: 10px;
+
+  /* Escala tipográfica do kit (Heading one … Body small). */
+  --text-titulo: 28px;
+  --text-titulo--line-height: 1.2;
+  --text-secao: 22px;
+  --text-secao--line-height: 1.25;
+  --text-destaque: 20px;
+  --text-destaque--line-height: 1.3;
+  --text-menu: 18px;
+  --text-menu--line-height: 1.35;
+  --text-corpo: 16px;
+  --text-corpo--line-height: 1.45;
+  --text-rotulo: 15px;
+  --text-rotulo--line-height: 1.4;
+  --text-legenda: 13px;
+  --text-legenda--line-height: 1.35;
+
+  /* Grade da casca no desktop. */
+  --spacing-coluna: 250px;
+  --spacing-cabecalho: 101px;
+}
+
+body {
+  background: var(--fundo);
+  color: var(--tinta-forte);
+}
