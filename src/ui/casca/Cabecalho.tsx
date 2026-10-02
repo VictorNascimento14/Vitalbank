@@ -1,6 +1,6 @@
 "use client";
 
-import { RiMenuLine, RiSearchLine, RiSettings5Line } from "@remixicon/react";
+import { RiMenuLine, RiSettings5Line } from "@remixicon/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
@@ -14,6 +14,8 @@ interface Props {
   nomeDoCliente: string;
   /** O sino de avisos (vem da tela, com os dados). */
   notificacoes?: ReactNode;
+  /** A busca (vem da tela, com o índice). Ocupa a largura do lugar onde é posta. */
+  busca?: ReactNode;
 }
 
 const botaoRedondo = cx(
@@ -22,31 +24,11 @@ const botaoRedondo = cx(
   "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primaria-viva",
 );
 
-function Busca({ className }: { className?: string }) {
-  return (
-    <label
-      className={cx(
-        "group flex h-[50px] items-center gap-4 rounded-full bg-fundo px-6",
-        "transition-shadow duration-200 ease-saida focus-within:ring-2 focus-within:ring-primaria-viva/40",
-        className,
-      )}
-    >
-      <RiSearchLine aria-hidden="true" className="size-5 shrink-0 text-tinta-suave" />
-      <span className="sr-only">Buscar</span>
-      <input
-        type="search"
-        placeholder="Buscar algo"
-        className="w-full bg-transparent text-rotulo text-tinta-forte placeholder:text-tinta-suave/80 focus:outline-none"
-      />
-    </label>
-  );
-}
-
 /**
  * Faixa de cima (101 px no desktop): título da tela, busca, atalhos e a pessoa logada.
  * No celular vira menu + título + avatar, com a busca numa segunda linha.
  */
-export function Cabecalho({ aoAbrirMenu, nomeDoCliente, notificacoes }: Props) {
+export function Cabecalho({ aoAbrirMenu, nomeDoCliente, notificacoes, busca }: Props) {
   const titulo = itemAtivo(usePathname())?.titulo ?? "Vitalbank";
   return (
     <header className="border-b border-borda bg-superficie px-6 pb-5 pt-6 lg:flex lg:h-cabecalho lg:items-center lg:gap-6 lg:px-10 lg:py-0">
@@ -65,9 +47,9 @@ export function Cabecalho({ aoAbrirMenu, nomeDoCliente, notificacoes }: Props) {
           <Avatar nome={nomeDoCliente} tamanho="sm" />
         </span>
       </div>
-      <Busca className="mt-5 lg:hidden" />
+      {busca && <div className="mt-5 lg:hidden">{busca}</div>}
       <div className="hidden items-center gap-7 lg:flex">
-        <Busca className="w-[255px]" />
+        {busca && <div className="w-[255px]">{busca}</div>}
         <Link href="/configuracoes" aria-label="Configurações" className={botaoRedondo}>
           <RiSettings5Line
             aria-hidden="true"
