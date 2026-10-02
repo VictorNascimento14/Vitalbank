@@ -93,6 +93,9 @@
   --text-legenda: 13px;
   --text-legenda--line-height: 1.35;
 
+  /* Ritmo: a mesma curva do src/ui/movimento/ritmo.ts. */
+  --ease-saida: cubic-bezier(0.22, 1, 0.36, 1);
+
   /* Grade da casca no desktop. */
   --spacing-coluna: 250px;
   --spacing-cabecalho: 101px;
