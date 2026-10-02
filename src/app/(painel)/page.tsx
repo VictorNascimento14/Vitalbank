@@ -9,7 +9,7 @@ import {
 import { AtividadeSemanal } from "@/telas/visao-geral/AtividadeSemanal";
 import { EstatisticaDeDespesas } from "@/telas/visao-geral/EstatisticaDeDespesas";
 import { HistoricoDeSaldo } from "@/telas/visao-geral/HistoricoDeSaldo";
-import { MeusCartoes } from "@/telas/visao-geral/MeusCartoes";
+import { AcaoDosCartoes, MeusCartoes } from "@/telas/comum/MeusCartoes";
 import { TransferenciaRapida } from "@/telas/visao-geral/TransferenciaRapida";
 import { TransacoesRecentes } from "@/telas/visao-geral/TransacoesRecentes";
 
@@ -24,7 +24,7 @@ export default async function VisaoGeral() {
   ]);
   return (
     <div className="grid gap-6 lg:gap-[30px] xl:grid-cols-[minmax(0,73fr)_minmax(0,35fr)]">
-      <MeusCartoes cartoes={cartoes} />
+      <MeusCartoes cartoes={cartoes} acao={<AcaoDosCartoes href="/cartoes">Ver todos</AcaoDosCartoes>} />
       <TransacoesRecentes transacoes={recentes} />
       <AtividadeSemanal dias={semana} />
       <EstatisticaDeDespesas despesas={despesas} />
