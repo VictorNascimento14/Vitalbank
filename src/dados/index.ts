@@ -4,9 +4,10 @@
  */
 import { ATIVIDADE_SEMANAL } from "./sementes/atividade";
 import { CARTOES } from "./sementes/cartoes";
+import { CONTATOS } from "./sementes/contatos";
 import { DESPESAS_POR_CATEGORIA } from "./sementes/despesas";
 import { TRANSACOES } from "./sementes/transacoes";
-import type { Cartao, Transacao } from "./tipos";
+import type { Cartao, Contato, Transacao } from "./tipos";
 
 export type * from "./tipos";
 
@@ -24,4 +25,8 @@ export async function atividadeSemanal() {
 
 export async function despesasPorCategoria() {
   return DESPESAS_POR_CATEGORIA;
+}
+
+export async function listarContatos(): Promise<readonly Contato[]> {
+  return CONTATOS;
 }
