@@ -1,5 +1,7 @@
-import { EmBreve } from "@/ui";
+import { obterPerfil } from "@/dados";
+import { Configuracoes as Abas } from "@/telas/configuracoes/Configuracoes";
 
-export default function Configuracoes() {
-  return <EmBreve tela="Configurações" />;
+export default async function Configuracoes() {
+  const perfil = await obterPerfil();
+  return <Abas perfil={perfil} />;
 }

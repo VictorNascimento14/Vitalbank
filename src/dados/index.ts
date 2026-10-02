@@ -18,6 +18,7 @@ import {
   RECEITA_MENSAL,
   RESUMO_DOS_INVESTIMENTOS,
 } from "./sementes/investimentos";
+import { PERFIL } from "./sementes/perfil";
 import { HISTORICO_DE_SALDO } from "./sementes/saldo";
 import { SERVICOS } from "./sementes/servicos";
 import { TRANSACOES } from "./sementes/transacoes";
@@ -109,4 +110,9 @@ export async function emprestimosAtivos() {
 /** Serviços do banco. */
 export async function listarServicos() {
   return SERVICOS;
+}
+
+/** Dados de cadastro da pessoa logada. */
+export async function obterPerfil() {
+  return PERFIL;
 }
