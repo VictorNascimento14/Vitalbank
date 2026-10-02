@@ -19,6 +19,7 @@ import {
   RESUMO_DOS_INVESTIMENTOS,
 } from "./sementes/investimentos";
 import { PERFIL } from "./sementes/perfil";
+import { BENEFICIOS, NIVEIS, PONTOS } from "./sementes/privilegios";
 import { HISTORICO_DE_SALDO } from "./sementes/saldo";
 import { SERVICOS } from "./sementes/servicos";
 import { TRANSACOES } from "./sementes/transacoes";
@@ -115,4 +116,9 @@ export async function listarServicos() {
 /** Dados de cadastro da pessoa logada. */
 export async function obterPerfil() {
   return PERFIL;
+}
+
+/** Níveis do programa de pontos, os pontos da pessoa e os benefícios de cada nível. */
+export async function programaDePontos() {
+  return { niveis: NIVEIS, pontos: PONTOS, beneficios: BENEFICIOS };
 }
