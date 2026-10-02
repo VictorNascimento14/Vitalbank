@@ -11,6 +11,7 @@ import { DESPESAS_POR_CATEGORIA } from "./sementes/despesas";
 import { DESPESAS_MENSAIS } from "./sementes/despesasMensais";
 import { FATURAS_ENVIADAS } from "./sementes/faturas";
 import {
+  ACOES_EM_ALTA,
   CARTEIRA,
   INVESTIMENTO_ANUAL,
   RECEITA_MENSAL,
@@ -86,4 +87,9 @@ export async function receitaMensal() {
 /** Aplicações da carteira. */
 export async function listarCarteira() {
   return CARTEIRA;
+}
+
+/** Ações com maior movimento no dia. */
+export async function acoesEmAlta() {
+  return ACOES_EM_ALTA;
 }
