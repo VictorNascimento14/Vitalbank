@@ -10,7 +10,7 @@ import { DEBITO_E_CREDITO } from "./sementes/debitoCredito";
 import { DESPESAS_POR_CATEGORIA } from "./sementes/despesas";
 import { DESPESAS_MENSAIS } from "./sementes/despesasMensais";
 import { FATURAS_ENVIADAS } from "./sementes/faturas";
-import { RESUMO_DOS_INVESTIMENTOS } from "./sementes/investimentos";
+import { INVESTIMENTO_ANUAL, RESUMO_DOS_INVESTIMENTOS } from "./sementes/investimentos";
 import { HISTORICO_DE_SALDO } from "./sementes/saldo";
 import { TRANSACOES } from "./sementes/transacoes";
 import type { Cartao, Contato, Transacao } from "./tipos";
@@ -67,3 +67,8 @@ export async function resumoDosInvestimentos() {
   return RESUMO_DOS_INVESTIMENTOS;
 }
 
+
+/** Total investido no fim de cada ano, seis anos. */
+export async function investimentoAnual() {
+  return INVESTIMENTO_ANUAL;
+}
