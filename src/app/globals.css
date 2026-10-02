@@ -17,6 +17,7 @@
   --tinta-forte: #232323;
   --tinta-suave: #718ebf;
   --tinta-apagada: #b1b1b1;
+  --marinho: #343c6a;
 
   --fundo: #f5f7fa;
   --superficie: #ffffff;
@@ -46,6 +47,83 @@
   --brilho-esqueleto: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.7), transparent);
 }
 
+/*
+ * Tema escuro: as mesmas variáveis, outros valores. Vale quando o sistema pede escuro e a
+ * pessoa não escolheu o claro, ou quando ela escolheu o escuro (`data-tema` no <html>).
+ * Componente nenhum muda — é por isso que cor só entra por token.
+ */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-tema="claro"]) {
+  --primaria: #6e6bff;
+  --primaria-viva: #5b83ff;
+  --azul: #6a8dff;
+
+  --tinta: #e4e7f5;
+  --tinta-forte: #f3f4fa;
+  --tinta-suave: #8d9cc4;
+  --tinta-apagada: #5d6585;
+  --marinho: #3a4275;
+
+  --fundo: #0e1020;
+  --superficie: #171a2e;
+  --borda: #252a44;
+  --borda-campo: #2e3452;
+
+  --sucesso: #2be0b4;
+  --turquesa: #22d3c5;
+  --perigo: #ff6b81;
+  --alerta: #ffc24d;
+  --laranja: #ffb02e;
+  --rosa: #ff8fb4;
+  --magenta: #f04dff;
+  --tangerina: #ff8a1f;
+
+  --amarelo-claro: rgb(255 187 56 / 0.14);
+  --azul-claro: rgb(106 141 255 / 0.16);
+  --turquesa-clara: rgb(34 211 197 / 0.14);
+  --rosa-claro: rgb(255 130 172 / 0.14);
+
+  --sombra-cor: rgb(0 0 0 / 0.45);
+  --brilho-esqueleto: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.06), transparent);
+  color-scheme: dark;
+  }
+}
+
+:root[data-tema="escuro"] {
+  --primaria: #6e6bff;
+  --primaria-viva: #5b83ff;
+  --azul: #6a8dff;
+
+  --tinta: #e4e7f5;
+  --tinta-forte: #f3f4fa;
+  --tinta-suave: #8d9cc4;
+  --tinta-apagada: #5d6585;
+  --marinho: #3a4275;
+
+  --fundo: #0e1020;
+  --superficie: #171a2e;
+  --borda: #252a44;
+  --borda-campo: #2e3452;
+
+  --sucesso: #2be0b4;
+  --turquesa: #22d3c5;
+  --perigo: #ff6b81;
+  --alerta: #ffc24d;
+  --laranja: #ffb02e;
+  --rosa: #ff8fb4;
+  --magenta: #f04dff;
+  --tangerina: #ff8a1f;
+
+  --amarelo-claro: rgb(255 187 56 / 0.14);
+  --azul-claro: rgb(106 141 255 / 0.16);
+  --turquesa-clara: rgb(34 211 197 / 0.14);
+  --rosa-claro: rgb(255 130 172 / 0.14);
+
+  --sombra-cor: rgb(0 0 0 / 0.45);
+  --brilho-esqueleto: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.06), transparent);
+  color-scheme: dark;
+}
+
 @theme inline {
   --font-sans: var(--fonte-inter), ui-sans-serif, system-ui, sans-serif;
   --font-cartao: var(--fonte-lato), var(--fonte-inter), sans-serif;
@@ -58,6 +136,7 @@
   --color-tinta-forte: var(--tinta-forte);
   --color-tinta-suave: var(--tinta-suave);
   --color-tinta-apagada: var(--tinta-apagada);
+  --color-marinho: var(--marinho);
 
   --color-fundo: var(--fundo);
   --color-superficie: var(--superficie);
