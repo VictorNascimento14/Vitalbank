@@ -41,3 +41,9 @@ export interface Transacao {
   /** Origem curta para a lista do painel ("Cartão", "PayPal", "Pix"). */
   meio: "cartao" | "paypal" | "pix";
 }
+
+export interface Contato {
+  id: string;
+  nome: string;
+  cargo: string;
+}
