@@ -1,0 +1,24 @@
+version: 2
+updates:
+  # Dependências do app (o Dependabot entende o pnpm-lock.yaml pelo ecossistema npm).
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    groups:
+      # Atualizações menores juntas, num PR só; as maiores vêm uma a uma, para revisar.
+      menores:
+        update-types: [minor, patch]
+    commit-message:
+      prefix: chore
+      include: scope
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    commit-message:
+      prefix: chore
+      include: scope
