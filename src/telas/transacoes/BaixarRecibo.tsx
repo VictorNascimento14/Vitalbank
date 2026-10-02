@@ -6,7 +6,7 @@ import { useState } from "react";
 import type { Transacao } from "@/dados";
 import { nomeDoRecibo, textoDoRecibo } from "@/dominio/recibo";
 import { Botao } from "@/ui";
-import { TIPO } from "./TabelaDeTransacoes";
+import { TIPO } from "@/telas/comum/categoria";
 
 /** Gera o recibo em texto no próprio navegador e baixa; o botão confirma com ✓ por um instante. */
 export function BaixarRecibo({ transacao }: { transacao: Transacao }) {
