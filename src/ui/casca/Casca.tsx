@@ -1,8 +1,9 @@
 "use client";
 
 import { AnimatePresence, motion } from "motion/react";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { duracao, mola } from "../movimento/ritmo";
+import { curvaSaida, duracao, mola } from "../movimento/ritmo";
 import { Cabecalho } from "./Cabecalho";
 import { ColunaLateral } from "./ColunaLateral";
 
@@ -19,6 +20,7 @@ interface Props {
  */
 export function Casca({ children, nomeDoCliente, notificacoes, busca }: Props) {
   const [aberta, setAberta] = useState(false);
+  const rota = usePathname();
   const gaveta = useRef<HTMLDivElement>(null);
   const fechar = () => setAberta(false);
 
@@ -86,7 +88,19 @@ export function Casca({ children, nomeDoCliente, notificacoes, busca }: Props) {
           aoAbrirMenu={() => setAberta(true)}
         />
         <main id="conteudo" tabIndex={-1} className="flex-1 px-6 py-6 focus:outline-none md:px-8 lg:px-10 lg:py-8">
-          {children}
+          {/*
+            Transição entre telas: a `key` na rota remonta só o miolo a cada navegação.
+            Fazia isso um `template.tsx`, mas junto do `error.tsx` no mesmo segmento o Next 16
+            avisava "unique key" no OuterLayoutRouter (ver a nota do PR).
+          */}
+          <motion.div
+            key={rota}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45, ease: curvaSaida }}
+          >
+            {children}
+          </motion.div>
         </main>
       </div>
     </div>
