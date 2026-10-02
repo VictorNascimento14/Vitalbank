@@ -9,13 +9,14 @@ import { ColunaLateral } from "./ColunaLateral";
 interface Props {
   children: ReactNode;
   nomeDoCliente: string;
+  notificacoes?: ReactNode;
 }
 
 /**
  * A casca do painel, montada uma vez pelo layout: só o miolo troca ao navegar.
  * A partir de `lg` a coluna fica fixa à esquerda; abaixo disso ela mora numa gaveta.
  */
-export function Casca({ children, nomeDoCliente }: Props) {
+export function Casca({ children, nomeDoCliente, notificacoes }: Props) {
   const [aberta, setAberta] = useState(false);
   const gaveta = useRef<HTMLDivElement>(null);
   const fechar = () => setAberta(false);
@@ -77,7 +78,7 @@ export function Casca({ children, nomeDoCliente }: Props) {
       </AnimatePresence>
 
       <div className="flex min-w-0 flex-1 flex-col">
-        <Cabecalho nomeDoCliente={nomeDoCliente} aoAbrirMenu={() => setAberta(true)} />
+        <Cabecalho nomeDoCliente={nomeDoCliente} notificacoes={notificacoes} aoAbrirMenu={() => setAberta(true)} />
         <main id="conteudo" tabIndex={-1} className="flex-1 px-6 py-6 focus:outline-none md:px-8 lg:px-10 lg:py-8">
           {children}
         </main>

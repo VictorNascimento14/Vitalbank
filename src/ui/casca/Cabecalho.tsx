@@ -1,8 +1,9 @@
 "use client";
 
-import { RiMenuLine, RiNotification3Line, RiSearchLine, RiSettings5Line } from "@remixicon/react";
+import { RiMenuLine, RiSearchLine, RiSettings5Line } from "@remixicon/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import type { ReactNode } from "react";
 import { Avatar } from "../base/Avatar";
 import { cx } from "../cx";
 import { itemAtivo } from "./navegacao";
@@ -11,6 +12,8 @@ interface Props {
   /** Abre a gaveta de navegação (celular e tablet). */
   aoAbrirMenu?: () => void;
   nomeDoCliente: string;
+  /** O sino de avisos (vem da tela, com os dados). */
+  notificacoes?: ReactNode;
 }
 
 const botaoRedondo = cx(
@@ -43,7 +46,7 @@ function Busca({ className }: { className?: string }) {
  * Faixa de cima (101 px no desktop): título da tela, busca, atalhos e a pessoa logada.
  * No celular vira menu + título + avatar, com a busca numa segunda linha.
  */
-export function Cabecalho({ aoAbrirMenu, nomeDoCliente }: Props) {
+export function Cabecalho({ aoAbrirMenu, nomeDoCliente, notificacoes }: Props) {
   const titulo = itemAtivo(usePathname())?.titulo ?? "Vitalbank";
   return (
     <header className="border-b border-borda bg-superficie px-6 pb-5 pt-6 lg:flex lg:h-cabecalho lg:items-center lg:gap-6 lg:px-10 lg:py-0">
@@ -57,7 +60,8 @@ export function Cabecalho({ aoAbrirMenu, nomeDoCliente }: Props) {
           <RiMenuLine aria-hidden="true" className="size-6" />
         </button>
         <h1 className="text-menu font-semibold text-tinta md:text-secao lg:text-titulo">{titulo}</h1>
-        <span className="lg:hidden">
+        <span className="flex items-center gap-3 lg:hidden">
+          {notificacoes}
           <Avatar nome={nomeDoCliente} tamanho="sm" />
         </span>
       </div>
@@ -70,16 +74,7 @@ export function Cabecalho({ aoAbrirMenu, nomeDoCliente }: Props) {
             className="size-6 text-tinta-suave transition-transform duration-500 ease-saida group-hover:rotate-90"
           />
         </Link>
-        <button type="button" aria-label="Notificações" className={cx(botaoRedondo, "relative")}>
-          <RiNotification3Line
-            aria-hidden="true"
-            className="size-6 text-perigo group-hover:motion-safe:animate-[sacudir_0.5s_ease-in-out]"
-          />
-          <span className="absolute right-3 top-3 flex size-2.5">
-            <span className="absolute inline-flex size-full rounded-full bg-perigo opacity-60 motion-safe:animate-ping" />
-            <span className="relative inline-flex size-2.5 rounded-full bg-perigo ring-2 ring-fundo" />
-          </span>
-        </button>
+        {notificacoes}
         <Avatar nome={nomeDoCliente} tamanho="lg" className="size-[60px]! text-corpo!" />
       </div>
     </header>

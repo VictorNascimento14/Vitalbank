@@ -18,6 +18,7 @@ import {
   RECEITA_MENSAL,
   RESUMO_DOS_INVESTIMENTOS,
 } from "./sementes/investimentos";
+import { NOTIFICACOES } from "./sementes/notificacoes";
 import { PERFIL } from "./sementes/perfil";
 import { BENEFICIOS, NIVEIS, PONTOS } from "./sementes/privilegios";
 import { HISTORICO_DE_SALDO } from "./sementes/saldo";
@@ -121,4 +122,9 @@ export async function obterPerfil() {
 /** Níveis do programa de pontos, os pontos da pessoa e os benefícios de cada nível. */
 export async function programaDePontos() {
   return { niveis: NIVEIS, pontos: PONTOS, beneficios: BENEFICIOS };
+}
+
+/** Avisos recentes, do mais novo ao mais antigo. */
+export async function listarNotificacoes() {
+  return NOTIFICACOES;
 }

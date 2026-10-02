@@ -17,9 +17,9 @@ test("o botão de menu chama a gaveta", async () => {
   expect(abrir).toHaveBeenCalledOnce();
 });
 
-test("busca, configurações e notificações têm nome acessível", () => {
+test("busca e configurações têm nome acessível", () => {
   render(<Cabecalho nomeDoCliente="Cliente Exemplo" />);
   expect(screen.getAllByRole("searchbox", { name: "Buscar" }).length).toBeGreaterThan(0);
   expect(screen.getByRole("link", { name: "Configurações" })).toHaveAttribute("href", "/configuracoes");
-  expect(screen.getByRole("button", { name: "Notificações" })).toBeInTheDocument();
+  // o sino vem de fora (slot `notificacoes`)
 });
