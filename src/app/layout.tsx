@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Lato } from "next/font/google";
 import { ProvedorDeMovimento } from "@/ui/movimento";
 import { SCRIPT_DE_OCULTAR } from "@/ui/privacidade/ocultar";
@@ -15,8 +15,18 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
+  // Endereço público, para links absolutos (imagem de compartilhamento). O Pages passa URL_DO_SITE.
+  metadataBase: new URL(process.env.URL_DO_SITE ?? "http://localhost:3000"),
   title: { default: "Vitalbank", template: "%s · Vitalbank" },
   description: "Painel de banco digital — cartões, transações, contas e investimentos.",
+};
+
+/** Cor da barra do navegador no celular, acompanhando o tema do sistema. */
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f5f7fa" },
+    { media: "(prefers-color-scheme: dark)", color: "#0e1020" },
+  ],
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
