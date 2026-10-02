@@ -3,6 +3,7 @@
 import type { obterPerfil } from "@/dados";
 import { Abas, Bloco } from "@/ui";
 import { EditarPerfil } from "./EditarPerfil";
+import { Preferencias } from "./Preferencias";
 
 type Perfil = Awaited<ReturnType<typeof obterPerfil>>;
 
@@ -12,7 +13,10 @@ export function Configuracoes({ perfil }: { perfil: Perfil }) {
     <Bloco className="md:!p-8">
       <Abas
         rotulo="Configurações"
-        abas={[{ id: "perfil", rotulo: "Editar perfil", conteudo: <EditarPerfil perfil={perfil} /> }]}
+        abas={[
+          { id: "perfil", rotulo: "Editar perfil", conteudo: <EditarPerfil perfil={perfil} /> },
+          { id: "preferencias", rotulo: "Preferências", conteudo: <Preferencias /> },
+        ]}
       />
     </Bloco>
   );
