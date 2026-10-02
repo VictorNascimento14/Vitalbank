@@ -26,7 +26,7 @@ export const NAVEGACAO: readonly ItemDeNavegacao[] = [
   { rota: "/transacoes", rotulo: "Transações", titulo: "Transações", Icone: RiMoneyDollarCircleFill },
   { rota: "/contas", rotulo: "Contas", titulo: "Contas", Icone: RiUser3Fill },
   { rota: "/investimentos", rotulo: "Investimentos", titulo: "Investimentos", Icone: RiBarChartBoxFill },
-  { rota: "/cartoes", rotulo: "Cartões de crédito", titulo: "Cartões de crédito", Icone: RiBankCardFill },
+  { rota: "/cartoes", rotulo: "Cartões", titulo: "Cartões de crédito", Icone: RiBankCardFill },
   { rota: "/emprestimos", rotulo: "Empréstimos", titulo: "Empréstimos", Icone: RiHandCoinFill },
   { rota: "/servicos", rotulo: "Serviços", titulo: "Serviços", Icone: RiToolsFill },
   { rota: "/privilegios", rotulo: "Meus privilégios", titulo: "Meus privilégios", Icone: RiLightbulbFlashFill },
