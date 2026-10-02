@@ -41,7 +41,7 @@ export function UltimaTransacao({ transacoes }: { transacoes: readonly Transacao
                 </p>
                 <p
                   className={cx(
-                    "text-right text-legenda font-medium tabular-nums md:text-corpo",
+                    "valor-sensivel text-right text-legenda font-medium tabular-nums md:text-corpo",
                     t.valor > 0 ? "text-sucesso" : "text-perigo",
                   )}
                 >

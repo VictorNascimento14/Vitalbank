@@ -35,7 +35,7 @@ export function TransacoesRecentes({ transacoes }: { transacoes: readonly Transa
                 </div>
                 <p
                   className={cx(
-                    "shrink-0 text-legenda font-medium tabular-nums md:text-rotulo",
+                    "valor-sensivel shrink-0 text-legenda font-medium tabular-nums md:text-rotulo",
                     entrada ? "text-sucesso" : "text-perigo",
                   )}
                 >

@@ -229,6 +229,20 @@
   to { clip-path: circle(150vmax at var(--vt-x, 50%) var(--vt-y, 0)); }
 }
 
+/*
+ * Ocultar valores: com `data-ocultar` no <html>, todo `.valor-sensivel` (saldos, valores de
+ * transação, eixos de dinheiro) fica borrado. É proteção contra quem olha por cima do
+ * ombro, não segredo: o leitor de tela continua lendo.
+ */
+.valor-sensivel {
+  transition: filter 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:root[data-ocultar] .valor-sensivel {
+  filter: blur(7px);
+  user-select: none;
+}
+
 body {
   background: var(--fundo);
   color: var(--tinta-forte);

@@ -34,7 +34,7 @@ export function CartaoDeResumo({ rotulo, valor, texto, formato = "moeda", tom, i
       </PastilhaDeIcone>
       <div className="min-w-0">
         <p className="truncate text-legenda text-tinta-suave md:text-rotulo xl:text-corpo">{rotulo}</p>
-        <p className="whitespace-nowrap text-legenda font-semibold text-tinta-forte sm:text-rotulo md:text-menu xl:text-destaque">
+        <p className="valor-sensivel whitespace-nowrap text-legenda font-semibold text-tinta-forte sm:text-rotulo md:text-menu xl:text-destaque">
           {valor !== undefined ? <NumeroAnimado valor={valor} formato={formato} /> : texto}
         </p>
       </div>

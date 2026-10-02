@@ -26,3 +26,8 @@ test("a face mostra só início e final do número", () => {
   expect(screen.getByText("Cliente Exemplo")).toBeInTheDocument();
   expect(screen.getByText("12/28")).toBeInTheDocument();
 });
+
+test("o saldo é marcado como valor sensível (some com 'ocultar valores')", () => {
+  render(<CartaoDeCredito cartao={cartao} />);
+  expect(screen.getByText(/R\$\s5\.756,00/)).toHaveClass("valor-sensivel");
+});
