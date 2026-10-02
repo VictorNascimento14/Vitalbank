@@ -6,6 +6,7 @@ import { ATIVIDADE_SEMANAL } from "./sementes/atividade";
 import { CARTOES } from "./sementes/cartoes";
 import { CONTATOS } from "./sementes/contatos";
 import { DESPESAS_POR_CATEGORIA } from "./sementes/despesas";
+import { DESPESAS_MENSAIS } from "./sementes/despesasMensais";
 import { HISTORICO_DE_SALDO } from "./sementes/saldo";
 import { TRANSACOES } from "./sementes/transacoes";
 import type { Cartao, Contato, Transacao } from "./tipos";
@@ -35,4 +36,9 @@ export async function listarContatos(): Promise<readonly Contato[]> {
 /** Saldo de fim de mês, do mais antigo ao mais recente. */
 export async function historicoDeSaldo() {
   return HISTORICO_DE_SALDO;
+}
+
+/** Total gasto por mês, seis meses, do mais antigo ao atual. */
+export async function despesasMensais() {
+  return DESPESAS_MENSAIS;
 }
