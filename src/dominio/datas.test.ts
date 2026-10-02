@@ -4,6 +4,7 @@ import {
   diaISO,
   formatarDataCurta,
   formatarDataLonga,
+  formatarDataMedia,
   haQuantoTempo,
   lerData,
   mesCurto,
@@ -24,6 +25,11 @@ test("diaISO usa o dia local, mesmo às 23h", () => {
 
 test("formatarDataLonga", () => {
   expect(formatarDataLonga("2021-01-28")).toBe("28 de janeiro de 2021");
+});
+
+test("formatarDataMedia cabe numa linha e ignora a hora", () => {
+  expect(formatarDataMedia("2026-09-28T09:12")).toBe("28 set 2026");
+  expect(formatarDataMedia("2021-01-05")).toBe("5 jan 2021");
 });
 
 describe("formatarDataCurta", () => {

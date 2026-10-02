@@ -33,6 +33,16 @@ export function formatarDataLonga(texto: DiaISO): string {
   return longa.format(lerData(texto));
 }
 
+const media = new Intl.DateTimeFormat("pt-BR", { day: "numeric", month: "short", year: "numeric" });
+
+/** "28 set 2026" — cabe numa linha de lista estreita. */
+export function formatarDataMedia(texto: DiaISO): string {
+  return media
+    .format(lerData(texto.slice(0, 10)))
+    .replace(/ de /g, " ")
+    .replace(".", "");
+}
+
 /** "28 jan, 12:30" — a hora só aparece quando o texto traz hora. */
 export function formatarDataCurta(texto: DiaISO): string {
   const data = lerData(texto);
