@@ -45,3 +45,13 @@ describe("transações", () => {
     expect(await listarTransacoes({ limite: 3 })).toHaveLength(3);
   });
 });
+
+test("atividade semanal: sete dias seguidos, valores inteiros", async () => {
+  const { atividadeSemanal } = await import(".");
+  const dias = await atividadeSemanal();
+  expect(dias).toHaveLength(7);
+  for (let i = 1; i < dias.length; i++) {
+    expect(lerData(dias[i].dia).getTime() - lerData(dias[i - 1].dia).getTime()).toBe(86_400_000);
+  }
+  for (const d of dias) expect(Number.isInteger(d.entradas) && Number.isInteger(d.saidas)).toBe(true);
+});
