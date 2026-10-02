@@ -9,6 +9,7 @@ import { CONTATOS } from "./sementes/contatos";
 import { DEBITO_E_CREDITO } from "./sementes/debitoCredito";
 import { DESPESAS_POR_CATEGORIA } from "./sementes/despesas";
 import { DESPESAS_MENSAIS } from "./sementes/despesasMensais";
+import { FATURAS_ENVIADAS } from "./sementes/faturas";
 import { HISTORICO_DE_SALDO } from "./sementes/saldo";
 import { TRANSACOES } from "./sementes/transacoes";
 import type { Cartao, Contato, Transacao } from "./tipos";
@@ -53,4 +54,9 @@ export async function resumoDaConta() {
 /** Débitos e créditos por dia, últimos 7 dias. */
 export async function debitoECredito() {
   return DEBITO_E_CREDITO;
+}
+
+/** Cobranças enviadas, da mais recente para a mais antiga. */
+export async function faturasEnviadas() {
+  return FATURAS_ENVIADAS;
 }
