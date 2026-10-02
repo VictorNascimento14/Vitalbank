@@ -5,7 +5,7 @@ type Dados = Awaited<ReturnType<typeof despesasPorCategoria>>;
 
 /** Cor e raio de cada fatia na ordem do kit: a maior fatia não é a mais longa. */
 const ESTILO = [
-  { cor: "tinta", raio: 0.9 },
+  { cor: "marinho", raio: 0.9 },
   { cor: "tangerina", raio: 0.82 },
   { cor: "magenta", raio: 0.95 },
   { cor: "primaria", raio: 0.86 },
