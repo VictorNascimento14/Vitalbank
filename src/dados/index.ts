@@ -19,6 +19,7 @@ import {
   RESUMO_DOS_INVESTIMENTOS,
 } from "./sementes/investimentos";
 import { HISTORICO_DE_SALDO } from "./sementes/saldo";
+import { SERVICOS } from "./sementes/servicos";
 import { TRANSACOES } from "./sementes/transacoes";
 import type { Cartao, Contato, Transacao } from "./tipos";
 
@@ -103,4 +104,9 @@ export async function linhasDeCredito() {
 /** Empréstimos em aberto. */
 export async function emprestimosAtivos() {
   return EMPRESTIMOS_ATIVOS;
+}
+
+/** Serviços do banco. */
+export async function listarServicos() {
+  return SERVICOS;
 }
