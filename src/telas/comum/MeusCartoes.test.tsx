@@ -14,3 +14,8 @@ test("mostra os dois primeiros cartões e a ação recebida", async () => {
   expect(screen.getAllByRole("article")).toHaveLength(2);
   expect(screen.getByRole("link", { name: "Ver todos" })).toHaveAttribute("href", "/cartoes");
 });
+
+test("quantos escolhe o número de cartões", async () => {
+  render(<MeusCartoes cartoes={await listarCartoes()} quantos={3} />);
+  expect(screen.getAllByRole("article")).toHaveLength(3);
+});

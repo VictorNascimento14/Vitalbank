@@ -17,10 +17,17 @@ export function AcaoDosCartoes({ href, children }: { href: string; children: Rea
 }
 
 /**
- * Os dois primeiros cartões, lado a lado. No celular viram uma fila que rola na
+ * Os primeiros cartões, lado a lado. No celular viram uma fila que rola na
  * horizontal e para em cada cartão (scroll-snap), como no kit mobile.
  */
-export function MeusCartoes({ cartoes, acao }: { cartoes: readonly Cartao[]; acao: ReactNode }) {
+interface Props {
+  cartoes: readonly Cartao[];
+  acao?: ReactNode;
+  /** Quantos cartões mostrar (Visão geral e Transações: 2; Cartões: 3). */
+  quantos?: number;
+}
+
+export function MeusCartoes({ cartoes, acao, quantos = 2 }: Props) {
   return (
     <section aria-labelledby="meus-cartoes">
       <TituloDeSecao id="meus-cartoes" acao={acao}>
@@ -31,7 +38,7 @@ export function MeusCartoes({ cartoes, acao }: { cartoes: readonly Cartao[]; aca
         intervalo={0.12}
         className="-mx-6 flex snap-x snap-mandatory gap-5 overflow-x-auto px-6 pb-4 pt-1 md:mx-0 md:gap-[30px] md:overflow-visible md:px-0 [scrollbar-width:none]"
       >
-        {cartoes.slice(0, 2).map((c) => (
+        {cartoes.slice(0, quantos).map((c) => (
           <ItemEscalonado key={c.id} como="li" className="w-[265px] shrink-0 snap-start md:w-auto md:flex-1">
             <CartaoDeCredito cartao={c} />
           </ItemEscalonado>
