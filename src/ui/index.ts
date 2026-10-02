@@ -13,3 +13,4 @@ export { itemAtivo, NAVEGACAO, type ItemDeNavegacao } from "./casca/navegacao";
 export { Cabecalho } from "./casca/Cabecalho";
 export { Casca } from "./casca/Casca";
 export { EmBreve } from "./casca/EmBreve";
+export { CartaoDeCredito } from "./cartao/CartaoDeCredito";
