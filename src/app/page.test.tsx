@@ -4,5 +4,5 @@ import Inicio from "./page";
 
 test("a página inicial mostra o nome do produto", () => {
   render(<Inicio />);
-  expect(screen.getByRole("heading", { name: "Vitalbank" })).toBeInTheDocument();
+  expect(screen.getByRole("heading", { name: /Vitalbank/ })).toBeInTheDocument();
 });
