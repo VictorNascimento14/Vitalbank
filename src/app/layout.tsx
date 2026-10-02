@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Lato } from "next/font/google";
+import { ProvedorDeMovimento } from "@/ui/movimento";
 import "./globals.css";
 
 // Inter é a família do kit; Lato aparece só nos cartões de crédito.
@@ -19,7 +20,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="pt-BR" className={`${inter.variable} ${lato.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <ProvedorDeMovimento>{children}</ProvedorDeMovimento>
+      </body>
     </html>
   );
 }
