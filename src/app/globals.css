@@ -119,6 +119,11 @@
   80% { transform: rotate(4deg); }
 }
 
+@keyframes flutuar {
+  0%, 100% { transform: rotate(12deg) translateY(0); }
+  50% { transform: rotate(6deg) translateY(10px); }
+}
+
 body {
   background: var(--fundo);
   color: var(--tinta-forte);
