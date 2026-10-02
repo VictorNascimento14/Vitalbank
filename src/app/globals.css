@@ -124,6 +124,11 @@
   50% { transform: rotate(6deg) translateY(10px); }
 }
 
+@keyframes pairar {
+  0%, 100% { transform: translateY(0) rotate(-4deg); }
+  50% { transform: translateY(-10px) rotate(4deg); }
+}
+
 body {
   background: var(--fundo);
   color: var(--tinta-forte);
