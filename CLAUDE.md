@@ -160,6 +160,9 @@ Quando o usuário disser **"publicar"**, **"publique"** ou pedir para "abrir PR"
 
 **Não pergunte "quer que eu abra o PR?"** — quem disse "publique" já consentiu.
 
+> O fluxo inteiro está automatizado em [`scripts/publicacao/`](scripts/publicacao/README.md): os textos (issue,
+> PR, nota, changelog) continuam escritos à mão; o script faz a sequência e não pula etapa.
+
 > **Um PR por vez.** Mergeie o anterior antes de abrir o próximo em cima da `main`. PR empilhado sobre
 > branch de outro PR, com squash, pode mergear numa base morta e nunca chegar à `main`.
 
