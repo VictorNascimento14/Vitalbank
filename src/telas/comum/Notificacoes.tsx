@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  RiArrowDownLine,
-  RiArrowUpLine,
-  RiBillFill,
-  RiNotification3Line,
-  RiShieldKeyholeFill,
-} from "@remixicon/react";
+import { RiArrowDownLine, RiArrowUpLine, RiBillFill, RiNotification3Line, RiShieldKeyholeFill } from "@remixicon/react";
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useId, useRef, useState, type ReactNode } from "react";
 import type { listarNotificacoes } from "@/dados";
@@ -63,7 +57,7 @@ export function Notificacoes({ itens, className }: { itens: Itens; className?: s
         aria-expanded={aberto}
         aria-controls={id}
         onClick={() => setAberto((a) => !a)}
-        className="group relative grid size-10 place-items-center rounded-full bg-fundo transition-colors duration-200 ease-saida hover:bg-azul-claro focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primaria-viva lg:size-[50px]"
+        className="group relative grid size-10 place-items-center rounded-full bg-fundo transition-colors duration-200 ease-saida hover:bg-azul-claro focus-visible:ring-2 focus-visible:ring-primaria-viva focus-visible:outline-none lg:size-[50px]"
       >
         <RiNotification3Line
           aria-hidden="true"
@@ -77,7 +71,7 @@ export function Notificacoes({ itens, className }: { itens: Itens; className?: s
               animate={{ scale: 1 }}
               exit={{ scale: 0 }}
               transition={mola}
-              className="absolute right-2 top-2 flex size-2.5 lg:right-3 lg:top-3"
+              className="absolute top-2 right-2 flex size-2.5 lg:top-3 lg:right-3"
             >
               <span className="absolute inline-flex size-full rounded-full bg-perigo opacity-60 motion-safe:animate-ping" />
               <span className="relative inline-flex size-2.5 rounded-full bg-perigo ring-2 ring-fundo" />
@@ -97,7 +91,7 @@ export function Notificacoes({ itens, className }: { itens: Itens; className?: s
             exit={{ opacity: 0, scale: 0.95, y: -4 }}
             transition={{ duration: duracao.media, ease: [0.22, 1, 0.36, 1] }}
             style={{ originX: 1, originY: 0 }}
-            className="absolute right-0 top-[calc(100%+12px)] z-30 w-[min(360px,calc(100vw-48px))] rounded-bloco bg-superficie p-2 shadow-[0_20px_50px_-15px_var(--sombra-cor),0_0_0_1px_var(--borda)]"
+            className="absolute top-[calc(100%+12px)] right-0 z-30 w-[min(360px,calc(100vw-48px))] rounded-bloco bg-superficie p-2 shadow-[0_20px_50px_-15px_var(--sombra-cor),0_0_0_1px_var(--borda)]"
           >
             <div className="flex items-center justify-between px-3 py-2">
               <p className="text-corpo font-semibold text-tinta">Notificações</p>

@@ -6,7 +6,11 @@ import { Notificacoes } from "@/telas/comum/Notificacoes";
 import { Casca, NAVEGACAO } from "@/ui";
 
 export default async function LayoutDoPainel({ children }: LayoutProps<"/">) {
-  const [avisos, transacoes, servicos] = await Promise.all([listarNotificacoes(), listarTransacoes(), listarServicos()]);
+  const [avisos, transacoes, servicos] = await Promise.all([
+    listarNotificacoes(),
+    listarTransacoes(),
+    listarServicos(),
+  ]);
   const indice: ItemDeBusca[] = [
     ...NAVEGACAO.map((n) => ({ tipo: "tela" as const, titulo: n.titulo, detalhe: "Abrir a tela", href: n.rota })),
     ...transacoes.map((t) => ({

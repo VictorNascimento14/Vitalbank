@@ -1,12 +1,31 @@
 "use client";
 
-import { RiAppleFill, RiCheckLine, RiGoogleFill, RiLock2Fill, RiNotification3Fill, RiStore2Fill } from "@remixicon/react";
+import {
+  RiAppleFill,
+  RiCheckLine,
+  RiGoogleFill,
+  RiLock2Fill,
+  RiNotification3Fill,
+  RiStore2Fill,
+} from "@remixicon/react";
 import { AnimatePresence, motion } from "motion/react";
 import { useState, type ReactNode } from "react";
 import { Alternador, Bloco, cx, PastilhaDeIcone, TituloDeSecao, type Tom } from "@/ui";
 import { Escalonado, ItemEscalonado, mola } from "@/ui/movimento";
 
-function Linha({ tom, icone, titulo, detalhe, children }: { tom: Tom; icone: ReactNode; titulo: string; detalhe: string; children: ReactNode }) {
+function Linha({
+  tom,
+  icone,
+  titulo,
+  detalhe,
+  children,
+}: {
+  tom: Tom;
+  icone: ReactNode;
+  titulo: string;
+  detalhe: string;
+  children: ReactNode;
+}) {
   return (
     <ItemEscalonado como="li" className="group flex items-center gap-4 py-2.5">
       <PastilhaDeIcone tom={tom} tamanho="sm">
@@ -30,12 +49,20 @@ function BotaoDeCarteira({ nome }: { nome: string }) {
       disabled={feito}
       aria-label={feito ? `Adicionado ao ${nome}` : `Adicionar ao ${nome}`}
       className={cx(
-        "grid h-9 min-w-[92px] shrink-0 place-items-center rounded-full px-3 text-legenda font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primaria-viva",
-        feito ? "bg-turquesa-clara text-sucesso" : "border border-primaria-viva text-primaria-viva hover:bg-primaria-viva hover:text-white",
+        "grid h-9 min-w-[92px] shrink-0 place-items-center rounded-full px-3 text-legenda font-medium transition-colors focus-visible:ring-2 focus-visible:ring-primaria-viva focus-visible:outline-none",
+        feito
+          ? "bg-turquesa-clara text-sucesso"
+          : "border border-primaria-viva text-primaria-viva hover:bg-primaria-viva hover:text-white",
       )}
     >
       <AnimatePresence mode="wait" initial={false}>
-        <motion.span key={String(feito)} className="flex items-center gap-1" initial={{ opacity: 0, scale: 0.6 }} animate={{ opacity: 1, scale: 1 }} transition={mola}>
+        <motion.span
+          key={String(feito)}
+          className="flex items-center gap-1"
+          initial={{ opacity: 0, scale: 0.6 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={mola}
+        >
           {feito ? (
             <>
               <RiCheckLine aria-hidden="true" className="size-4" /> Pronto
@@ -63,7 +90,11 @@ export function ConfiguracoesDoCartao() {
             titulo="Bloquear cartão"
             detalhe={bloqueado ? "Bloqueado: compras recusadas" : "Bloqueie na hora"}
           >
-            <Alternador rotulo={<span className="sr-only">Bloquear cartão</span>} ligado={bloqueado} aoMudar={setBloqueado} />
+            <Alternador
+              rotulo={<span className="sr-only">Bloquear cartão</span>}
+              ligado={bloqueado}
+              aoMudar={setBloqueado}
+            />
           </Linha>
           <Linha tom="azul" icone={<RiNotification3Fill />} titulo="Avisos de compra" detalhe="A cada compra">
             <Alternador rotulo={<span className="sr-only">Avisos de compra</span>} ligadoInicial />

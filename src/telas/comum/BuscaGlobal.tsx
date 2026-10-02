@@ -120,7 +120,7 @@ export function BuscaGlobal({ itens, className }: { itens: readonly ItemDeBusca[
               <kbd className="rounded-miudo border border-borda px-1.5 py-0.5 text-legenda text-tinta-suave">Esc</kbd>
             </div>
             <div className="max-h-[50vh] overflow-y-auto p-2">
-              {!termo.trim() && <p className="px-3 pb-1 pt-2 text-legenda font-medium text-tinta-suave">Ir para</p>}
+              {!termo.trim() && <p className="px-3 pt-2 pb-1 text-legenda font-medium text-tinta-suave">Ir para</p>}
               {resultados.length === 0 ? (
                 <p className="px-3 py-8 text-center text-rotulo text-tinta-suave">Nada encontrado para “{termo}”.</p>
               ) : (
@@ -136,9 +136,15 @@ export function BuscaGlobal({ itens, className }: { itens: readonly ItemDeBusca[
                       className="relative flex cursor-pointer items-center gap-3 rounded-campo px-3 py-2.5"
                     >
                       {i === ativo && (
-                        <motion.span layoutId={`${id}-ativo`} transition={mola} className="absolute inset-0 rounded-campo bg-azul-claro" />
+                        <motion.span
+                          layoutId={`${id}-ativo`}
+                          transition={mola}
+                          className="absolute inset-0 rounded-campo bg-azul-claro"
+                        />
                       )}
-                      <span className={cx("relative", i === ativo ? "text-primaria" : "text-tinta-suave")}>{GRUPOS[r.tipo].icone}</span>
+                      <span className={cx("relative", i === ativo ? "text-primaria" : "text-tinta-suave")}>
+                        {GRUPOS[r.tipo].icone}
+                      </span>
                       <span className="relative min-w-0 flex-1">
                         <span className="block truncate text-rotulo font-medium text-tinta-forte">{r.titulo}</span>
                         <span className="block truncate text-legenda text-tinta-suave">
@@ -147,7 +153,10 @@ export function BuscaGlobal({ itens, className }: { itens: readonly ItemDeBusca[
                       </span>
                       <RiArrowRightLine
                         aria-hidden="true"
-                        className={cx("relative size-4 transition-[opacity,translate] duration-200", i === ativo ? "translate-x-0 text-primaria opacity-100" : "-translate-x-1 opacity-0")}
+                        className={cx(
+                          "relative size-4 transition-[opacity,translate] duration-200",
+                          i === ativo ? "translate-x-0 text-primaria opacity-100" : "-translate-x-1 opacity-0",
+                        )}
                       />
                     </li>
                   ))}
@@ -169,13 +178,18 @@ export function BuscaGlobal({ itens, className }: { itens: readonly ItemDeBusca[
         aria-haspopup="dialog"
         className={cx(
           "group flex h-[50px] w-full items-center gap-4 rounded-full bg-fundo px-6 text-left transition-colors duration-200 ease-saida hover:bg-azul-claro",
-          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primaria-viva",
+          "focus-visible:ring-2 focus-visible:ring-primaria-viva focus-visible:outline-none",
           className,
         )}
       >
-        <RiSearchLine aria-hidden="true" className="size-5 shrink-0 text-tinta-suave transition-transform group-hover:scale-110" />
+        <RiSearchLine
+          aria-hidden="true"
+          className="size-5 shrink-0 text-tinta-suave transition-transform group-hover:scale-110"
+        />
         <span className="flex-1 truncate text-rotulo text-tinta-suave/80">Buscar algo</span>
-        <kbd className="hidden rounded-miudo bg-superficie px-1.5 py-0.5 text-legenda text-tinta-suave md:inline">Ctrl K</kbd>
+        <kbd className="hidden rounded-miudo bg-superficie px-1.5 py-0.5 text-legenda text-tinta-suave md:inline">
+          Ctrl K
+        </kbd>
       </button>
       {typeof document !== "undefined" && createPortal(modal, document.body)}
     </>

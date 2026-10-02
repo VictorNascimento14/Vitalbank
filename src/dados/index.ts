@@ -78,7 +78,6 @@ export async function resumoDosInvestimentos() {
   return RESUMO_DOS_INVESTIMENTOS;
 }
 
-
 /** Total investido no fim de cada ano, seis anos. */
 export async function investimentoAnual() {
   return INVESTIMENTO_ANUAL;

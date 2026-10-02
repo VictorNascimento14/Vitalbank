@@ -38,28 +38,28 @@ e atualizá-lo faz parte da tarefa que descobriu a divergência, no **mesmo PR**
 
 ### 🗺️ Mapa rápido — onde achar o quê no cofre
 
-| Pergunta | Onde olhar primeiro |
-|---|---|
-| "O que é este produto? para quem?" | `00 - Índice/visao-de-produto.md` |
-| "Que decisão foi tomada sobre X?" | `02 - ADRs/ADR-NNN-*.md` |
-| "Qual é a cor / o raio / a fonte de X?" | `00 - Índice/linguagem-visual.md` |
-| "Que página/componente é esse?" | `05 - Frontend/{Paginas,Componentes/<Area>}/<Nome>.md` |
-| "O que mudou nesse PR?" | `01 - PRs/2026/<data>-pr-NNN-*.md` |
-| "O que já aconteceu no projeto?" | `03 - Changelog/2026.md` |
-| "O que falta da v1?" | `08 - Infra e Deploy/Planos/2026-10-02-plano-da-v1.md` |
-| "Onde escrevo isso?" | `CLAUDE.md` do cofre · `10 - Meta/guia-de-uso.md` |
+| Pergunta                                | Onde olhar primeiro                                    |
+| --------------------------------------- | ------------------------------------------------------ |
+| "O que é este produto? para quem?"      | `00 - Índice/visao-de-produto.md`                      |
+| "Que decisão foi tomada sobre X?"       | `02 - ADRs/ADR-NNN-*.md`                               |
+| "Qual é a cor / o raio / a fonte de X?" | `00 - Índice/linguagem-visual.md`                      |
+| "Que página/componente é esse?"         | `05 - Frontend/{Paginas,Componentes/<Area>}/<Nome>.md` |
+| "O que mudou nesse PR?"                 | `01 - PRs/2026/<data>-pr-NNN-*.md`                     |
+| "O que já aconteceu no projeto?"        | `03 - Changelog/2026.md`                               |
+| "O que falta da v1?"                    | `08 - Infra e Deploy/Planos/2026-10-02-plano-da-v1.md` |
+| "Onde escrevo isso?"                    | `CLAUDE.md` do cofre · `10 - Meta/guia-de-uso.md`      |
 
 ---
 
 ## 🔑 Alvos canônicos
 
-| Item | Valor |
-|---|---|
-| Repositório de código | `VictorNascimento14/Vitalbank` (`$VITALBANK_REPO`) |
-| Cofre | `VictorNascimento14/Obsidian-vitalbank` (`$VITALBANK_VAULT`) |
-| Sistema visual | UI kit **BankDash** (Figma Community), traduzido em tokens próprios — ver ADR-002 do cofre |
-| Backend | **não existe na v1** — dados fictícios atrás de `src/dados/`, ver ADR-001 do cofre |
-| Porta local | `3000` (`pnpm dev`) |
+| Item                  | Valor                                                                                      |
+| --------------------- | ------------------------------------------------------------------------------------------ |
+| Repositório de código | `VictorNascimento14/Vitalbank` (`$VITALBANK_REPO`)                                         |
+| Cofre                 | `VictorNascimento14/Obsidian-vitalbank` (`$VITALBANK_VAULT`)                               |
+| Sistema visual        | UI kit **BankDash** (Figma Community), traduzido em tokens próprios — ver ADR-002 do cofre |
+| Backend               | **não existe na v1** — dados fictícios atrás de `src/dados/`, ver ADR-001 do cofre         |
+| Porta local           | `3000` (`pnpm dev`)                                                                        |
 
 ---
 

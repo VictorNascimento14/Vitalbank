@@ -34,7 +34,7 @@ export function AlternadorDeTema({ className }: { className?: string }) {
       aria-label={escuro ? "Usar tema claro" : "Usar tema escuro"}
       className={cx(
         "group grid size-10 shrink-0 place-items-center overflow-hidden rounded-full bg-fundo transition-colors duration-200 ease-saida hover:bg-azul-claro lg:size-[50px]",
-        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primaria-viva",
+        "focus-visible:ring-2 focus-visible:ring-primaria-viva focus-visible:outline-none",
         className,
       )}
     >
@@ -47,7 +47,11 @@ export function AlternadorDeTema({ className }: { className?: string }) {
           transition={mola}
           className="text-tinta-suave"
         >
-          {escuro ? <RiSunFill aria-hidden="true" className="size-5 lg:size-6" /> : <RiMoonFill aria-hidden="true" className="size-5 lg:size-6" />}
+          {escuro ? (
+            <RiSunFill aria-hidden="true" className="size-5 lg:size-6" />
+          ) : (
+            <RiMoonFill aria-hidden="true" className="size-5 lg:size-6" />
+          )}
         </motion.span>
       </AnimatePresence>
     </button>

@@ -31,7 +31,13 @@ export function ResumoDosInvestimentos({ resumo }: { resumo: Dados }) {
           />
         </ItemEscalonado>
         <ItemEscalonado como="li">
-          <CartaoDeResumo className="h-full" rotulo="Taxa de retorno" texto={retorno} tom="azul" icone={<RiExchangeFill />} />
+          <CartaoDeResumo
+            className="h-full"
+            rotulo="Taxa de retorno"
+            texto={retorno}
+            tom="azul"
+            icone={<RiExchangeFill />}
+          />
         </ItemEscalonado>
       </Escalonado>
     </section>

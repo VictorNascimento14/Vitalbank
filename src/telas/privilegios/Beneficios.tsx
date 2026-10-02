@@ -50,7 +50,9 @@ export function Beneficios({ programa }: { programa: Dados }) {
                   <p className="text-legenda text-tinta-suave md:text-rotulo">{b.descricao}</p>
                 </div>
                 {liberado ? (
-                  <span className="shrink-0 rounded-full bg-turquesa-clara px-2.5 py-1 text-legenda font-medium text-sucesso">Ativo</span>
+                  <span className="shrink-0 rounded-full bg-turquesa-clara px-2.5 py-1 text-legenda font-medium text-sucesso">
+                    Ativo
+                  </span>
                 ) : (
                   <span className="flex shrink-0 items-center gap-1 rounded-full bg-fundo px-2.5 py-1 text-legenda font-medium text-tinta-suave">
                     <RiLock2Fill aria-hidden="true" className="size-3.5" />

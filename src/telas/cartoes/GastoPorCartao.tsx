@@ -14,7 +14,13 @@ export function gastoPorCartao(cartoes: readonly Cartao[], transacoes: readonly 
   }));
 }
 
-export function GastoPorCartao({ cartoes, transacoes }: { cartoes: readonly Cartao[]; transacoes: readonly Transacao[] }) {
+export function GastoPorCartao({
+  cartoes,
+  transacoes,
+}: {
+  cartoes: readonly Cartao[];
+  transacoes: readonly Transacao[];
+}) {
   const gastos = gastoPorCartao(cartoes, transacoes);
   return (
     <section aria-labelledby="gasto-por-cartao" className="flex flex-col">

@@ -31,7 +31,7 @@ export function TransacoesRecentes({ transacoes }: { transacoes: readonly Transa
                 </PastilhaDeIcone>
                 <div className="min-w-0 flex-1">
                   <p className="truncate text-rotulo font-medium text-tinta-forte md:text-corpo">{t.descricao}</p>
-                  <p className="whitespace-nowrap text-legenda text-tinta-suave">{formatarDataMedia(t.data)}</p>
+                  <p className="text-legenda whitespace-nowrap text-tinta-suave">{formatarDataMedia(t.data)}</p>
                 </div>
                 <p
                   className={cx(

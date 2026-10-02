@@ -19,7 +19,7 @@ describe("formatarMoeda", () => {
     expect(formatarMoeda(0, { sinal: true })).toBe(nbsp("R$ 0,00"));
   });
 
-  test("compacto encurta valores grandes, sem \",0\" sobrando", () => {
+  test('compacto encurta valores grandes, sem ",0" sobrando', () => {
     expect(formatarMoeda(15000000, { compacto: true })).toBe(nbsp("R$ 150 mil"));
     expect(formatarMoeda(120000, { compacto: true })).toBe(nbsp("R$ 1,2 mil"));
   });

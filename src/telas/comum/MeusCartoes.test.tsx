@@ -5,10 +5,7 @@ import { AcaoDosCartoes, MeusCartoes } from "./MeusCartoes";
 
 test("mostra os dois primeiros cartões e a ação recebida", async () => {
   render(
-    <MeusCartoes
-      cartoes={await listarCartoes()}
-      acao={<AcaoDosCartoes href="/cartoes">Ver todos</AcaoDosCartoes>}
-    />,
+    <MeusCartoes cartoes={await listarCartoes()} acao={<AcaoDosCartoes href="/cartoes">Ver todos</AcaoDosCartoes>} />,
   );
   expect(screen.getByRole("heading", { name: "Meus cartões" })).toBeInTheDocument();
   expect(screen.getAllByRole("article")).toHaveLength(2);

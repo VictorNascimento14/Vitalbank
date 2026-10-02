@@ -36,7 +36,7 @@ export function MeusCartoes({ cartoes, acao, quantos = 2 }: Props) {
       <Escalonado
         como="ul"
         intervalo={0.12}
-        className="-mx-6 flex snap-x snap-mandatory gap-5 overflow-x-auto px-6 pb-4 pt-1 md:mx-0 md:gap-[30px] md:overflow-visible md:px-0 [scrollbar-width:none]"
+        className="-mx-6 flex snap-x snap-mandatory [scrollbar-width:none] gap-5 overflow-x-auto px-6 pt-1 pb-4 md:mx-0 md:gap-[30px] md:overflow-visible md:px-0"
       >
         {cartoes.slice(0, quantos).map((c) => (
           <ItemEscalonado key={c.id} como="li" className="w-[265px] shrink-0 snap-start md:w-auto md:flex-1">

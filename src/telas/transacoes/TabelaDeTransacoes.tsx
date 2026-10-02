@@ -53,13 +53,29 @@ export function TabelaDeTransacoes({ transacoes, acao }: Props) {
         <caption className="sr-only">Transações</caption>
         <thead>
           <tr className="border-b border-borda text-rotulo font-medium text-tinta-suave">
-            <th scope="col" className={cx(celula, "pt-0 font-medium")}>Descrição</th>
-            <th scope="col" className={cx(celula, "pt-0 font-medium")}>Código</th>
-            <th scope="col" className={cx(celula, "pt-0 font-medium")}>Tipo</th>
-            <th scope="col" className={cx(celula, "pt-0 font-medium")}>Cartão</th>
-            <th scope="col" className={cx(celula, "pt-0 font-medium")}>Data</th>
-            <th scope="col" className={cx(celula, "pt-0 text-right font-medium")}>Valor</th>
-            {acao && <th scope="col" className={cx(celula, "pt-0 text-right font-medium")}>Recibo</th>}
+            <th scope="col" className={cx(celula, "pt-0 font-medium")}>
+              Descrição
+            </th>
+            <th scope="col" className={cx(celula, "pt-0 font-medium")}>
+              Código
+            </th>
+            <th scope="col" className={cx(celula, "pt-0 font-medium")}>
+              Tipo
+            </th>
+            <th scope="col" className={cx(celula, "pt-0 font-medium")}>
+              Cartão
+            </th>
+            <th scope="col" className={cx(celula, "pt-0 font-medium")}>
+              Data
+            </th>
+            <th scope="col" className={cx(celula, "pt-0 text-right font-medium")}>
+              Valor
+            </th>
+            {acao && (
+              <th scope="col" className={cx(celula, "pt-0 text-right font-medium")}>
+                Recibo
+              </th>
+            )}
           </tr>
         </thead>
         <Escalonado como="tbody" intervalo={0.04}>
@@ -79,7 +95,7 @@ export function TabelaDeTransacoes({ transacoes, acao }: Props) {
               <td className={celula}>{TIPO[t.categoria]}</td>
               <td className={cx(celula, "whitespace-nowrap")}>{finalDoCartao(t.cartao)}</td>
               <td className={cx(celula, "whitespace-nowrap")}>{formatarDataCurta(t.data)}</td>
-              <td className={cx(celula, "whitespace-nowrap text-right")}>
+              <td className={cx(celula, "text-right whitespace-nowrap")}>
                 <Valor centavos={t.valor} />
               </td>
               {acao && <td className={cx(celula, "text-right")}>{acao(t)}</td>}
@@ -90,7 +106,11 @@ export function TabelaDeTransacoes({ transacoes, acao }: Props) {
 
       <Escalonado como="ul" intervalo={0.04} className="flex flex-col md:hidden">
         {transacoes.map((t) => (
-          <ItemEscalonado key={t.id} como="li" className="group flex items-center gap-3.5 border-b border-borda py-3.5 last:border-0">
+          <ItemEscalonado
+            key={t.id}
+            como="li"
+            className="group flex items-center gap-3.5 border-b border-borda py-3.5 last:border-0"
+          >
             <Seta entrada={t.valor > 0} />
             <div className="min-w-0 flex-1">
               <p className="truncate text-rotulo font-medium text-tinta-forte">{t.descricao}</p>

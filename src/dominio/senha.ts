@@ -13,7 +13,16 @@ export const ROTULO_DA_FORCA: Record<Forca, string> = {
 };
 
 /** Senhas que aparecem no topo de qualquer vazamento: valem zero, por mais variadas que pareçam. */
-const COMUNS = new Set(["12345678", "123456789", "1234567890", "senha123", "password", "qwerty123", "abcdefgh", "abc12345"]);
+const COMUNS = new Set([
+  "12345678",
+  "123456789",
+  "1234567890",
+  "senha123",
+  "password",
+  "qwerty123",
+  "abcdefgh",
+  "abc12345",
+]);
 
 export function forcaDaSenha(senha: string): Forca {
   if (senha.length < 6) return 0;

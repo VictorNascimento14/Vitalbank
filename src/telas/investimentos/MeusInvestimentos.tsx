@@ -35,11 +35,18 @@ export function MeusInvestimentos({ carteira }: { carteira: Dados }) {
                   <p className="truncate text-legenda text-tinta-suave md:text-rotulo">{a.setor}</p>
                 </div>
                 <div className="hidden md:block">
-                  <p className="valor-sensivel text-corpo font-medium text-tinta-forte tabular-nums">{formatarMoeda(a.valor)}</p>
+                  <p className="valor-sensivel text-corpo font-medium text-tinta-forte tabular-nums">
+                    {formatarMoeda(a.valor)}
+                  </p>
                   <p className="text-rotulo text-tinta-suave">Valor investido</p>
                 </div>
                 <div className="text-right md:text-left">
-                  <p className={cx("text-rotulo font-medium tabular-nums md:text-corpo", a.retorno >= 0 ? "text-sucesso" : "text-perigo")}>
+                  <p
+                    className={cx(
+                      "text-rotulo font-medium tabular-nums md:text-corpo",
+                      a.retorno >= 0 ? "text-sucesso" : "text-perigo",
+                    )}
+                  >
                     {retornoComSinal(a.retorno)}
                   </p>
                   <p className="text-legenda text-tinta-suave md:text-rotulo">Retorno</p>

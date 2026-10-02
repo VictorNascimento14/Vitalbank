@@ -66,7 +66,14 @@ export function AdicionarCartao() {
               { valor: "platinum", rotulo: "Platinum" },
             ]}
           />
-          <Campo rotulo="Nome no cartão" placeholder="Cliente Exemplo" value={nome} erro={erros.nome} onChange={(e) => setNome(e.target.value)} autoComplete="off" />
+          <Campo
+            rotulo="Nome no cartão"
+            placeholder="Cliente Exemplo"
+            value={nome}
+            erro={erros.nome}
+            onChange={(e) => setNome(e.target.value)}
+            autoComplete="off"
+          />
           <Campo
             rotulo="Número do cartão"
             placeholder="•••• •••• •••• ••••"

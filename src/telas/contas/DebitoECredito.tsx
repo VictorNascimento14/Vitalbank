@@ -14,7 +14,8 @@ export function DebitoECredito({ dias }: { dias: Dados }) {
       <Bloco className="flex-1">
         <p className="mb-1 text-legenda text-tinta-suave md:text-rotulo">
           <strong className="valor-sensivel font-semibold text-tinta">{formatarMoeda(debitado)}</strong> debitados e{" "}
-          <strong className="valor-sensivel font-semibold text-tinta">{formatarMoeda(creditado)}</strong> creditados nesta semana
+          <strong className="valor-sensivel font-semibold text-tinta">{formatarMoeda(creditado)}</strong> creditados
+          nesta semana
         </p>
         <GraficoDeBarras
           titulo="Débitos e créditos por dia, últimos 7 dias"

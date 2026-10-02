@@ -16,17 +16,27 @@ export function AcoesEmAlta({ acoes }: { acoes: Dados }) {
           <caption className="sr-only">Ações em alta hoje</caption>
           <thead>
             <tr className="text-tinta-suave">
-              <th scope="col" className={cx(celula, "font-medium")}>Nº</th>
-              <th scope="col" className={cx(celula, "font-medium")}>Nome</th>
-              <th scope="col" className={cx(celula, "text-right font-medium")}>Preço</th>
-              <th scope="col" className={cx(celula, "text-right font-medium")}>Variação</th>
+              <th scope="col" className={cx(celula, "font-medium")}>
+                Nº
+              </th>
+              <th scope="col" className={cx(celula, "font-medium")}>
+                Nome
+              </th>
+              <th scope="col" className={cx(celula, "text-right font-medium")}>
+                Preço
+              </th>
+              <th scope="col" className={cx(celula, "text-right font-medium")}>
+                Variação
+              </th>
             </tr>
           </thead>
           <Escalonado como="tbody" intervalo={0.05}>
             {acoes.map((a, i) => (
               <ItemEscalonado key={a.id} como="tr" className="text-tinta-forte transition-colors hover:bg-fundo/70">
                 <td className={cx(celula, "tabular-nums")}>{String(i + 1).padStart(2, "0")}.</td>
-                <th scope="row" className={cx(celula, "font-normal")}>{a.nome}</th>
+                <th scope="row" className={cx(celula, "font-normal")}>
+                  {a.nome}
+                </th>
                 <td className={cx(celula, "text-right tabular-nums")}>{formatarMoeda(a.preco)}</td>
                 <td className={cx(celula, "text-right tabular-nums", a.variacao >= 0 ? "text-sucesso" : "text-perigo")}>
                   {retornoComSinal(a.variacao)}

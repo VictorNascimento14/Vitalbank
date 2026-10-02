@@ -36,9 +36,7 @@ export const NAVEGACAO: readonly ItemDeNavegacao[] = [
 /** O item da rota aberta: "/" só casa exato; os outros casam também as sub-rotas. */
 export function itemAtivo(caminho: string): ItemDeNavegacao | undefined {
   const limpo = caminho.replace(/\/+$/, "") || "/";
-  return NAVEGACAO.find((i) =>
-    i.rota === "/" ? limpo === "/" : limpo === i.rota || limpo.startsWith(`${i.rota}/`),
-  );
+  return NAVEGACAO.find((i) => (i.rota === "/" ? limpo === "/" : limpo === i.rota || limpo.startsWith(`${i.rota}/`)));
 }
 
 /** Metadados da aba para a tela da rota: título "Transações · Vitalbank". */

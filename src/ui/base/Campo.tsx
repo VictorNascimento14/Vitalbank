@@ -27,8 +27,8 @@ export function Campo({ rotulo, erro, dica, className, ...resto }: Props) {
         aria-describedby={apoio ? idApoio : undefined}
         className={cx(
           "h-12 rounded-campo border bg-superficie px-5 text-rotulo text-tinta-suave",
-          "placeholder:text-tinta-suave/60 transition-[border-color,box-shadow] duration-200 ease-saida",
-          "focus:border-primaria-viva focus:outline-none focus:ring-4 focus:ring-primaria-viva/15",
+          "transition-[border-color,box-shadow] duration-200 ease-saida placeholder:text-tinta-suave/60",
+          "focus:border-primaria-viva focus:ring-4 focus:ring-primaria-viva/15 focus:outline-none",
           erro ? "border-perigo" : "border-borda-campo hover:border-tinta-suave/50",
         )}
         {...resto}

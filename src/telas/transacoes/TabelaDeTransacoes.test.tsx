@@ -6,7 +6,9 @@ import { TabelaDeTransacoes } from "./TabelaDeTransacoes";
 test("tabela com cabeçalhos e uma linha por transação", async () => {
   render(<TabelaDeTransacoes transacoes={await listarTransacoes({ limite: 5 })} />);
   const tabela = screen.getByRole("table", { name: "Transações" });
-  const cabecalhos = within(tabela).getAllByRole("columnheader").map((c) => c.textContent);
+  const cabecalhos = within(tabela)
+    .getAllByRole("columnheader")
+    .map((c) => c.textContent);
   expect(cabecalhos).toEqual(["Descrição", "Código", "Tipo", "Cartão", "Data", "Valor"]);
   const linhas = within(tabela).getAllByRole("row").slice(1);
   expect(linhas).toHaveLength(5);

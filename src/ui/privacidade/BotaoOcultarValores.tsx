@@ -18,7 +18,7 @@ export function BotaoOcultarValores({ className }: { className?: string }) {
       onClick={() => definirOcultar(!ocultos)}
       className={cx(
         "grid size-10 shrink-0 place-items-center rounded-full bg-fundo transition-colors duration-200 ease-saida hover:bg-azul-claro lg:size-[50px]",
-        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primaria-viva",
+        "focus-visible:ring-2 focus-visible:ring-primaria-viva focus-visible:outline-none",
         className,
       )}
     >
@@ -31,7 +31,11 @@ export function BotaoOcultarValores({ className }: { className?: string }) {
           transition={{ ...mola, stiffness: 600 }}
           className={ocultos ? "text-primaria" : "text-tinta-suave"}
         >
-          {ocultos ? <RiEyeOffLine aria-hidden="true" className="size-5 lg:size-6" /> : <RiEyeLine aria-hidden="true" className="size-5 lg:size-6" />}
+          {ocultos ? (
+            <RiEyeOffLine aria-hidden="true" className="size-5 lg:size-6" />
+          ) : (
+            <RiEyeLine aria-hidden="true" className="size-5 lg:size-6" />
+          )}
         </motion.span>
       </AnimatePresence>
     </button>

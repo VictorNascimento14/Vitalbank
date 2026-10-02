@@ -23,7 +23,7 @@ interface Props {
 const botaoRedondo = cx(
   "group grid size-[50px] shrink-0 place-items-center rounded-full bg-fundo",
   "transition-colors duration-200 ease-saida hover:bg-azul-claro",
-  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primaria-viva",
+  "focus-visible:ring-2 focus-visible:ring-primaria-viva focus-visible:outline-none",
 );
 
 /**
@@ -33,13 +33,13 @@ const botaoRedondo = cx(
 export function Cabecalho({ aoAbrirMenu, nomeDoCliente, notificacoes, busca }: Props) {
   const titulo = itemAtivo(usePathname())?.titulo ?? "Vitalbank";
   return (
-    <header className="border-b border-borda bg-superficie px-6 pb-5 pt-6 lg:flex lg:h-cabecalho lg:items-center lg:gap-6 lg:px-10 lg:py-0">
+    <header className="border-b border-borda bg-superficie px-6 pt-6 pb-5 lg:flex lg:h-cabecalho lg:items-center lg:gap-6 lg:px-10 lg:py-0">
       <div className="flex items-center justify-between gap-4 lg:flex-1">
         <button
           type="button"
           onClick={aoAbrirMenu}
           aria-label="Abrir menu"
-          className="grid size-10 place-items-center rounded-miudo text-tinta transition-colors hover:bg-fundo focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primaria-viva lg:hidden"
+          className="grid size-10 place-items-center rounded-miudo text-tinta transition-colors hover:bg-fundo focus-visible:ring-2 focus-visible:ring-primaria-viva focus-visible:outline-none lg:hidden"
         >
           <RiMenuLine aria-hidden="true" className="size-6" />
         </button>

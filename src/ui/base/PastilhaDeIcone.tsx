@@ -38,7 +38,7 @@ export function PastilhaDeIcone({ tom, tamanho = "md", children, className }: Pr
       aria-hidden="true"
       className={cx(
         "inline-flex shrink-0 items-center justify-center rounded-full",
-        "transition-transform duration-300 ease-saida group-hover:-rotate-6 group-hover:scale-110",
+        "transition-transform duration-300 ease-saida group-hover:scale-110 group-hover:-rotate-6",
         TONS[tom],
         TAMANHOS[tamanho],
         className,
