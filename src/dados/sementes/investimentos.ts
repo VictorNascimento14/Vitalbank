@@ -30,3 +30,10 @@ export const RECEITA_MENSAL: readonly { mes: string; receita: number }[] = [
   { mes: "2026-09-01", receita: 3320000 },
   { mes: "2026-10-01", receita: 3810000 },
 ];
+
+/** Aplicações da carteira. Empresas fictícias; valor em centavos, retorno em pontos-base. */
+export const CARTEIRA: readonly { id: string; nome: string; setor: string; valor: number; retorno: number }[] = [
+  { id: "a1", nome: "Pomar Tecnologia", setor: "E-commerce, marketplace", valor: 5400000, retorno: 1600 },
+  { id: "a2", nome: "Galáxia Mobile", setor: "E-commerce, marketplace", valor: 2530000, retorno: -400 },
+  { id: "a3", nome: "Volt Motores", setor: "Veículos elétricos", valor: 820000, retorno: 2500 },
+];
