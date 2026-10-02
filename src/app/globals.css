@@ -213,6 +213,22 @@
   to { transform: translateX(100%); }
 }
 
+/* Troca de tema: o novo se espalha em círculo a partir do botão (View Transitions). */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-new(root) {
+  animation: espalhar 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes espalhar {
+  from { clip-path: circle(0 at var(--vt-x, 50%) var(--vt-y, 0)); }
+  to { clip-path: circle(150vmax at var(--vt-x, 50%) var(--vt-y, 0)); }
+}
+
 body {
   background: var(--fundo);
   color: var(--tinta-forte);
