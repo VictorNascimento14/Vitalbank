@@ -1,0 +1,23 @@
+name: Funcionalidade
+description: Uma peça nova ou uma melhoria numa tela.
+labels: []
+body:
+  - type: textarea
+    id: o-que
+    attributes:
+      label: O que é
+      description: O que a pessoa vai ver ou conseguir fazer.
+    validations:
+      required: true
+  - type: textarea
+    id: por-que
+    attributes:
+      label: Por quê
+      description: Que necessidade isto atende. Se vem do Figma, qual tela/bloco.
+  - type: textarea
+    id: pronto
+    attributes:
+      label: Pronto quando
+      description: Como saber que terminou (o que testar).
+    validations:
+      required: true
