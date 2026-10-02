@@ -16,3 +16,4 @@ export { EmBreve } from "./casca/EmBreve";
 export { CartaoDeCredito } from "./cartao/CartaoDeCredito";
 export { GraficoDeBarras, type Serie } from "./graficos/GraficoDeBarras";
 export { GraficoDePizza, type Fatia } from "./graficos/GraficoDePizza";
+export { GraficoDeLinha } from "./graficos/GraficoDeLinha";
