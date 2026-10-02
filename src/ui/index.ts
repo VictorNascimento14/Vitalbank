@@ -24,3 +24,4 @@ export { GraficoDePizza, type Fatia } from "./graficos/GraficoDePizza";
 export { GraficoDeLinha } from "./graficos/GraficoDeLinha";
 export { GraficoDeColunas } from "./graficos/GraficoDeColunas";
 export { GraficoDeRosca, type Arco } from "./graficos/GraficoDeRosca";
+export { AlternadorDeTema } from "./tema/AlternadorDeTema";

@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
 import { Avatar } from "../base/Avatar";
 import { cx } from "../cx";
+import { AlternadorDeTema } from "../tema/AlternadorDeTema";
 import { itemAtivo } from "./navegacao";
 
 interface Props {
@@ -43,6 +44,7 @@ export function Cabecalho({ aoAbrirMenu, nomeDoCliente, notificacoes, busca }: P
         </button>
         <h1 className="text-menu font-semibold text-tinta md:text-secao lg:text-titulo">{titulo}</h1>
         <span className="flex items-center gap-3 lg:hidden">
+          <AlternadorDeTema />
           {notificacoes}
           <Avatar nome={nomeDoCliente} tamanho="sm" />
         </span>
@@ -50,6 +52,7 @@ export function Cabecalho({ aoAbrirMenu, nomeDoCliente, notificacoes, busca }: P
       {busca && <div className="mt-5 lg:hidden">{busca}</div>}
       <div className="hidden items-center gap-7 lg:flex">
         {busca && <div className="w-[255px]">{busca}</div>}
+        <AlternadorDeTema />
         <Link href="/configuracoes" aria-label="Configurações" className={botaoRedondo}>
           <RiSettings5Line
             aria-hidden="true"
