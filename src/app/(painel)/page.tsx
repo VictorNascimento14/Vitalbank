@@ -23,12 +23,12 @@ export default async function VisaoGeral() {
     historicoDeSaldo(),
   ]);
   return (
-    <div className="grid gap-6 lg:gap-[30px] xl:grid-cols-[minmax(0,73fr)_minmax(0,35fr)]">
+    <div className="grid grid-cols-1 gap-6 lg:gap-[30px] xl:grid-cols-[minmax(0,73fr)_minmax(0,35fr)]">
       <MeusCartoes cartoes={cartoes} acao={<AcaoDosCartoes href="/cartoes">Ver todos</AcaoDosCartoes>} />
       <TransacoesRecentes transacoes={recentes} />
       <AtividadeSemanal dias={semana} />
       <EstatisticaDeDespesas despesas={despesas} />
-      <div className="grid gap-6 lg:gap-[30px] xl:col-span-2 xl:grid-cols-[minmax(0,445fr)_minmax(0,635fr)]">
+      <div className="grid grid-cols-1 gap-6 lg:gap-[30px] xl:col-span-2 xl:grid-cols-[minmax(0,445fr)_minmax(0,635fr)]">
         <TransferenciaRapida contatos={contatos} />
         <HistoricoDeSaldo meses={saldo} />
       </div>
