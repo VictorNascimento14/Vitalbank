@@ -4,6 +4,7 @@ import type { obterPerfil } from "@/dados";
 import { Abas, Bloco } from "@/ui";
 import { EditarPerfil } from "./EditarPerfil";
 import { Preferencias } from "./Preferencias";
+import { Seguranca } from "./Seguranca";
 
 type Perfil = Awaited<ReturnType<typeof obterPerfil>>;
 
@@ -16,6 +17,7 @@ export function Configuracoes({ perfil }: { perfil: Perfil }) {
         abas={[
           { id: "perfil", rotulo: "Editar perfil", conteudo: <EditarPerfil perfil={perfil} /> },
           { id: "preferencias", rotulo: "Preferências", conteudo: <Preferencias /> },
+          { id: "seguranca", rotulo: "Segurança", conteudo: <Seguranca /> },
         ]}
       />
     </Bloco>
