@@ -9,6 +9,8 @@ on:
 jobs:
   documentacao:
     name: seção 📓 Documentação
+    # Atualização de dependência do Dependabot não tem nota no cofre: o PR é do robô.
+    if: github.event.pull_request.user.login != 'dependabot[bot]'
     runs-on: ubuntu-latest
     steps:
       - name: Conferir o corpo do PR
