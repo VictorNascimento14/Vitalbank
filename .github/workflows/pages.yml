@@ -33,7 +33,7 @@ jobs:
           URL_DO_SITE: https://${{ github.repository_owner }}.github.io
       # sem isto, o Pages (Jekyll) ignoraria a pasta _next
       - run: touch out/.nojekyll
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: out
 
